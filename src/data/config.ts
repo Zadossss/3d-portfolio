@@ -1,45 +1,42 @@
 const config = {
-  title: "Hugo Auphant | Étudiant MMI",
+  title: "Hugo Auphant | Étudiant MMI & Futur Game designer",
   description: {
-    long: "Explore the portfolio of Naresh, a full-stack developer and creative technologist specializing in interactive web experiences, 3D animations, and innovative projects. Discover my latest work, including Coding Ducks, The Booking Desk, Ghostchat, and more. Let's build something amazing together!",
-    short:
-      "Discover the portfolio of Naresh, a full-stack developer creating interactive web experiences and innovative projects.",
+    long: "Découvrez le portfolio de Hugo Auphant, 21 ans, étudiant en MMI et futur game designer spécialisé dans les expériences interactives 3D, les prototypes de jeux et les univers immersifs. Passionné par le jeu vidéo, la narration et le gameplay, je conçois des projets qui mêlent créativité, technologie et émotion.",
+    short: "Hugo Auphant, 21 ans, étudiant MMI et futur game designer créant des expériences 3D interactives, des prototypes de jeux et des univers immersifs."
   },
-  keywords: [
-    "Naresh",
-    "portfolio",
-    "full-stack developer",
-    "creative technologist",
-    "web development",
-    "3D animations",
-    "interactive websites",
-    "Coding Ducks",
-    "The Booking Desk",
-    "Ghostchat",
-    "web design",
-    "GSAP",
-    "React",
-    "Next.js",
-    "Spline",
-    "Framer Motion",
+
+ keywords: [
+    "Hugo Auphant",
+    "game designer",
+    "game design",
+    "video games",
+    "3D portfolio",
+    "interactive experiences",
+    "game development",
+    "Unity",
+    "Unreal Engine",
+    "level design",
+    "gameplay design",
+    "MMI",
+    "student portfolio",
+    "3D web",
+    "creative developer",
+    "interactive design",
+    "digital art",
+    "game prototyping"
   ],
+  
   author: "Hugo Auphant",
   email: "auphanthugo@gmail.com",
   site: "https://nareshkhatri.site",
 
-  // for github stars button
-  githubUsername: "naresh-khatri",
-  githubRepo: "3d-portfolio",
-
   get ogImg() {
     return this.site + "/assets/seo/og-image.png";
   },
-  social: {
-    twitter: "https://x.com/nothotchaddi",
-    linkedin: "https://www.linkedin.com/in/naresh-khatri/",
-    instagram: "https://www.instagram.com/hotchaddi",
-    facebook: "https://www.facebook.com/HotChaddi/",
-    github: "https://github.com/Naresh-Khatri",
-  },
+social: {
+  instagram: "https://www.instagram.com/hugoat.fbx/",
+  linkedin: "https://www.linkedin.com/in/hugo-auphant-55074329b/"
+}
+
 };
 export { config };
