@@ -38,5 +38,9 @@ social: {
   linkedin: "https://www.linkedin.com/in/hugo-auphant-55074329b/"
 }
 
+githubUsername: "",
+githubRepo: "",
+
+
 };
 export { config };
