@@ -36,7 +36,7 @@ const config = {
 social: {
   instagram: "https://www.instagram.com/hugoat.fbx/",
   linkedin: "https://www.linkedin.com/in/hugo-auphant-55074329b/"
-}
+},
 
 githubUsername: "",
 githubRepo: "",
