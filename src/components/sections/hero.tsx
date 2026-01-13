@@ -11,7 +11,7 @@ import {
 import { usePreloader } from "../preloader";
 import { BlurIn, BoxReveal } from "../reveal-animations";
 import ScrollDownIcon from "../scroll-down-icon";
-import { SiLinkedin } from "react-icons/si";
+import { SiLinkedin, SiInstagram } from "react-icons/si";
 import { config } from "@/data/config";
 
 import SectionWrapper from "../ui/section-wrapper";
@@ -40,7 +40,7 @@ const HeroSection = () => {
                       "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text "
                     )}
                   >
-                    Hi, I am
+                    Salut, je suis
                     <br className="md:hidden" />
                   </p>
                 </BlurIn>
@@ -64,7 +64,7 @@ const HeroSection = () => {
                       side="top"
                       className="dark:bg-white dark:text-black"
                     >
-                      theres something waiting for you in devtools
+                      Quelque chose vous attend dans le monde virtuel
                     </TooltipContent>
                   </Tooltip>
                 </BlurIn>
@@ -103,7 +103,7 @@ const HeroSection = () => {
                           variant={"outline"}
                           className="block w-full overflow-hidden"
                         >
-                          Hire Me
+                          Embauchez-moi
                         </Button>
                       </Link>
                     </TooltipTrigger>
