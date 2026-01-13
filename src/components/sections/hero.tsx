@@ -121,6 +121,16 @@ const HeroSection = () => {
                         <SiLinkedin size={24} />
                       </Button>
                     </Link>
+                    <Link
+                      href={config.social.instagram}
+                      target="_blank"
+                      className="cursor-can-hover"
+                    >
+                      <Button variant={"outline"}>
+                        <SiInstagram size={24} />
+                      </Button>
+                    </Link>
+
                   </div>
                 </div>
               </div>
