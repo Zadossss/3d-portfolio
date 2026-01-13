@@ -10,7 +10,6 @@ import FunnyThemeToggle from "../theme/funny-theme-toggle";
 import { Button } from "../ui/button";
 import { config } from "@/data/config";
 import OnlineUsers from "../realtime/online-users";
-import { GitHubStarsButton } from "../ui/shadcn-io/github-stars-button";
 
 interface HeaderProps {
   loader?: boolean;
