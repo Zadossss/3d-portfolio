@@ -145,6 +145,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     color: "#111111",
     icon: "/icons/json.svg",
   },
+};
 
 export type Experience = {
   id: number;
