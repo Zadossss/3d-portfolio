@@ -147,6 +147,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
   },
 };
 
+
 export type Experience = {
   id: number;
   startDate: string;
