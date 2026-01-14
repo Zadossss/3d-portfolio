@@ -31,7 +31,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "Unity",
     shortDescription: "Prototypage gameplay, UI, itérations et intégration.",
     color: "#111111",
-    icon: "/icons/unity.svg",
+    icon: "/assets/icons/unity.svg",
   },
   [SkillNames.UNREAL]: {
     id: 2,
@@ -39,7 +39,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "Unreal Engine",
     shortDescription: "Exploration moteur, scènes, logique et pipeline temps réel.",
     color: "#111111",
-    icon: "/icons/unreal.svg",
+    icon: "/assets/icons/unreal.svg",
   },
   [SkillNames.BLENDER]: {
     id: 3,
@@ -47,7 +47,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "Blender",
     shortDescription: "Modélisation, rendu, animation simple, exports optimisés.",
     color: "#f5792a",
-    icon: "/icons/blender.svg",
+    icon: "/assets/icons/blender.svg",
   },
   [SkillNames.SUBSTANCE_PAINTER]: {
     id: 4,
@@ -55,7 +55,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "Substance Painter",
     shortDescription: "Texturing PBR, matériaux et finitions propres pour jeu.",
     color: "#e74c3c",
-    icon: "/icons/substance-painter.svg",
+    icon: "/assets/icons/substance-painter.svg",
   },
   [SkillNames.PHOTOSHOP]: {
     id: 5,
@@ -63,7 +63,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "Photoshop",
     shortDescription: "Retouche, compositing, assets UI et visuels.",
     color: "#31a8ff",
-    icon: "/icons/photoshop.svg",
+    icon: "/assets/icons/photoshop.svg",
   },
   [SkillNames.ILLUSTRATOR]: {
     id: 6,
@@ -71,7 +71,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "Illustrator",
     shortDescription: "Vectoriel, logos, pictos, UI kits.",
     color: "#ff9a00",
-    icon: "/icons/illustrator.svg",
+    icon: "/assets/icons/illustrator.svg",
   },
   [SkillNames.INDESIGN]: {
     id: 7,
@@ -79,7 +79,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "InDesign",
     shortDescription: "Mise en page, dossiers, print & exports.",
     color: "#ff3366",
-    icon: "/icons/indesign.svg",
+    icon: "/assets/icons/indesign.svg",
   },
   [SkillNames.PREMIERE_PRO]: {
     id: 8,
@@ -87,7 +87,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "Premiere Pro",
     shortDescription: "Montage, rythme, export web et habillage.",
     color: "#9999ff",
-    icon: "/icons/premiere-pro.svg",
+    icon: "/assets/icons/premiere-pro.svg",
   },
   [SkillNames.AFTER_EFFECTS]: {
     id: 9,
@@ -95,7 +95,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "After Effects",
     shortDescription: "Motion design, titrage, transitions et compositing léger.",
     color: "#d291ff",
-    icon: "/icons/after-effects.svg",
+    icon: "/assets/icons/after-effects.svg",
   },
   [SkillNames.FIGMA]: {
     id: 10,
@@ -103,7 +103,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "Figma",
     shortDescription: "Wireframes, UI/UX, protos et design system.",
     color: "#a259ff",
-    icon: "/icons/figma.svg",
+    icon: "/assets/icons/figma.svg",
   },
   [SkillNames.CANVA]: {
     id: 11,
@@ -111,7 +111,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "Canva",
     shortDescription: "Visuels rapides, posts, présentations et templates.",
     color: "#00c4cc",
-    icon: "/icons/canva.svg",
+    icon: "/assets/icons/canva.svg",
   },
   [SkillNames.HTML]: {
     id: 12,
@@ -119,7 +119,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "HTML",
     shortDescription: "Structure sémantique et intégration propre.",
     color: "#e34c26",
-    icon: "/icons/html.svg",
+    icon: "/assets/icons/html.svg",
   },
   [SkillNames.CSS]: {
     id: 13,
@@ -127,7 +127,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "CSS",
     shortDescription: "Mise en forme, responsive et détails UI.",
     color: "#2965f1",
-    icon: "/icons/css.svg",
+    icon: "/assets/icons/css.svg",
   },
   [SkillNames.JS]: {
     id: 14,
@@ -135,7 +135,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "JavaScript",
     shortDescription: "Interactions, logique front et scripts.",
     color: "#f0db4f",
-    icon: "/icons/javascript.svg",
+    icon: "/assets/icons/javascript.svg",
   },
   [SkillNames.JSON]: {
     id: 15,
@@ -143,7 +143,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "JSON",
     shortDescription: "Données, configs et échanges simples.",
     color: "#111111",
-    icon: "/icons/json.svg",
+    icon: "/assets/icons/json.svg",
   },
 };
 
