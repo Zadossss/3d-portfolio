@@ -197,26 +197,7 @@ export const EXPERIENCE: Experience[] = [
     ],
   },
 ];
-  {
-    id: 2,
-    startDate: "Apr 2022",
-    endDate: "Dec 2024",
-    title: "Freelance Developer",
-    company: "Live & Learn",
-    description: [
-      "Delivered custom web solutions for diverse clients.",
-      "Managed full project lifecycles from design to deployment.",
-      "Maintained high client satisfaction through effective communication.",
-    ],
-    skills: [
-      SkillNames.REACT,
-      SkillNames.NODEJS,
-      SkillNames.MONGODB,
-      SkillNames.TAILWIND,
-      SkillNames.WORDPRESS,
-    ],
-  },
-];
+
 
 export const themeDisclaimers = {
   light: [
