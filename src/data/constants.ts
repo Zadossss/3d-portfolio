@@ -154,7 +154,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "Premiere Pro",
     shortDescription: "Montage vidéo et narration visuelle.",
     color: "#111111",
-    icon: "/assets/icons/premiere.svg",
+    icon: "/assets/icons/premiere-pro.svg",
   },
 
   [SkillNames.AFTER_EFFECT]: {
