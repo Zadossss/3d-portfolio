@@ -3,19 +3,34 @@ export enum SkillNames {
   UNITY = "unity",
   UNREAL = "unreal",
   BLENDER = "blender",
-  SUBSTANCE_PAINTER = "substance_painter",
-  PHOTOSHOP = "photoshop",
-  ILLUSTRATOR = "illustrator",
-  INDESIGN = "indesign",
-  PREMIERE_PRO = "premiere_pro",
-  AFTER_EFFECTS = "after_effects",
-  FIGMA = "figma",
-  CANVA = "canva",
+
   HTML = "html",
   CSS = "css",
   JS = "js",
   JSON = "json",
+
+  FIGMA = "figma",
+  PHOTOSHOP = "photoshop",
+  ILLUSTRATOR = "illustrator",
+  INDESIGN = "indesign",
+  LIGHTROOM = "lightroom",
+
+  PREMIERE_PRO = "premiere-pro",
+  AFTER_EFFECT = "after-effect",
+  SUBSTANCE_PAINTER = "substance-painter",
+  DAVINCI = "davinci",
+
+  WORDPRESS = "wordpress",
+  SPLINE = "spline",
+  TWINE = "twine",
+  CHATGPT = "chatgpt",
+
+  VISUAL_STUDIO_CODE = "visual-studio-code",
+  XCODE = "xcode",
+  PYTHON = "python",
+  SUITE_OFFICE = "suite-office",
 }
+
 export type Skill = {
   id: number;
   name: string;
@@ -33,117 +48,212 @@ export const SKILLS: Record<SkillNames, Skill> = {
     color: "#111111",
     icon: "/assets/icons/unity.svg",
   },
+
   [SkillNames.UNREAL]: {
     id: 2,
     name: "unreal",
     label: "Unreal Engine",
-    shortDescription: "Exploration moteur, scènes, logique et pipeline temps réel.",
+    shortDescription: "Moteur temps réel, logique Blueprint et scènes 3D.",
     color: "#111111",
-    icon: "/assets/icons/unreal.svg",
+    icon: "/assets/icons/unrealengine.svg",
   },
+
   [SkillNames.BLENDER]: {
     id: 3,
     name: "blender",
     label: "Blender",
-    shortDescription: "Modélisation, rendu, animation simple, exports optimisés.",
-    color: "#f5792a",
+    shortDescription: "Modélisation, lighting, baking et rendu 3D.",
+    color: "#111111",
     icon: "/assets/icons/blender.svg",
   },
-  [SkillNames.SUBSTANCE_PAINTER]: {
-    id: 4,
-    name: "substance_painter",
-    label: "Substance Painter",
-    shortDescription: "Texturing PBR, matériaux et finitions propres pour jeu.",
-    color: "#e74c3c",
-    icon: "/assets/icons/substance-painter.svg",
-  },
-  [SkillNames.PHOTOSHOP]: {
-    id: 5,
-    name: "photoshop",
-    label: "Photoshop",
-    shortDescription: "Retouche, compositing, assets UI et visuels.",
-    color: "#31a8ff",
-    icon: "/assets/icons/photoshop.svg",
-  },
-  [SkillNames.ILLUSTRATOR]: {
-    id: 6,
-    name: "illustrator",
-    label: "Illustrator",
-    shortDescription: "Vectoriel, logos, pictos, UI kits.",
-    color: "#ff9a00",
-    icon: "/assets/icons/illustrator.svg",
-  },
-  [SkillNames.INDESIGN]: {
-    id: 7,
-    name: "indesign",
-    label: "InDesign",
-    shortDescription: "Mise en page, dossiers, print & exports.",
-    color: "#ff3366",
-    icon: "/assets/icons/indesign.svg",
-  },
-  [SkillNames.PREMIERE_PRO]: {
-    id: 8,
-    name: "premiere_pro",
-    label: "Premiere Pro",
-    shortDescription: "Montage, rythme, export web et habillage.",
-    color: "#9999ff",
-    icon: "/assets/icons/premiere-pro.svg",
-  },
-  [SkillNames.AFTER_EFFECTS]: {
-    id: 9,
-    name: "after_effects",
-    label: "After Effects",
-    shortDescription: "Motion design, titrage, transitions et compositing léger.",
-    color: "#d291ff",
-    icon: "/assets/icons/after-effects.svg",
-  },
-  [SkillNames.FIGMA]: {
-    id: 10,
-    name: "figma",
-    label: "Figma",
-    shortDescription: "Wireframes, UI/UX, protos et design system.",
-    color: "#a259ff",
-    icon: "/assets/icons/figma.svg",
-  },
-  [SkillNames.CANVA]: {
-    id: 11,
-    name: "canva",
-    label: "Canva",
-    shortDescription: "Visuels rapides, posts, présentations et templates.",
-    color: "#00c4cc",
-    icon: "/assets/icons/canva.svg",
-  },
+
   [SkillNames.HTML]: {
-    id: 12,
+    id: 4,
     name: "html",
     label: "HTML",
-    shortDescription: "Structure sémantique et intégration propre.",
-    color: "#e34c26",
-    icon: "/assets/icons/html.svg",
+    shortDescription: "Structure sémantique et accessibilité web.",
+    color: "#111111",
+    icon: "/assets/icons/html5.svg",
   },
+
   [SkillNames.CSS]: {
-    id: 13,
+    id: 5,
     name: "css",
     label: "CSS",
-    shortDescription: "Mise en forme, responsive et détails UI.",
-    color: "#2965f1",
+    shortDescription: "Mise en page, responsive design et animations.",
+    color: "#111111",
     icon: "/assets/icons/css.svg",
   },
+
   [SkillNames.JS]: {
-    id: 14,
+    id: 6,
     name: "js",
     label: "JavaScript",
-    shortDescription: "Interactions, logique front et scripts.",
-    color: "#f0db4f",
+    shortDescription: "Logique applicative et interactions dynamiques.",
+    color: "#111111",
     icon: "/assets/icons/javascript.svg",
   },
+
   [SkillNames.JSON]: {
-    id: 15,
+    id: 7,
     name: "json",
     label: "JSON",
-    shortDescription: "Données, configs et échanges simples.",
+    shortDescription: "Échange de données et structuration d’API.",
     color: "#111111",
     icon: "/assets/icons/json.svg",
+  },
+
+  [SkillNames.FIGMA]: {
+    id: 8,
+    name: "figma",
+    label: "Figma",
+    shortDescription: "UI/UX design, prototypage et collaboration.",
+    color: "#111111",
+    icon: "/assets/icons/figma.svg",
+  },
+
+  [SkillNames.PHOTOSHOP]: {
+    id: 9,
+    name: "photoshop",
+    label: "Photoshop",
+    shortDescription: "Retouche, compositing et création graphique.",
+    color: "#111111",
+    icon: "/assets/icons/photoshop.svg",
+  },
+
+  [SkillNames.ILLUSTRATOR]: {
+    id: 10,
+    name: "illustrator",
+    label: "Illustrator",
+    shortDescription: "Illustration vectorielle et identité visuelle.",
+    color: "#111111",
+    icon: "/assets/icons/illustrator.svg",
+  },
+
+  [SkillNames.INDESIGN]: {
+    id: 11,
+    name: "indesign",
+    label: "InDesign",
+    shortDescription: "Mise en page print et documents éditoriaux.",
+    color: "#111111",
+    icon: "/assets/icons/indesign.svg",
+  },
+
+  [SkillNames.LIGHTROOM]: {
+    id: 12,
+    name: "lightroom",
+    label: "Lightroom",
+    shortDescription: "Traitement photo et color grading.",
+    color: "#111111",
+    icon: "/assets/icons/lightroom.svg",
+  },
+
+  [SkillNames.PREMIERE_PRO]: {
+    id: 13,
+    name: "premiere-pro",
+    label: "Premiere Pro",
+    shortDescription: "Montage vidéo et narration visuelle.",
+    color: "#111111",
+    icon: "/assets/icons/premiere.svg",
+  },
+
+  [SkillNames.AFTER_EFFECT]: {
+    id: 14,
+    name: "after-effect",
+    label: "After Effects",
+    shortDescription: "Motion design et effets visuels.",
+    color: "#111111",
+    icon: "/assets/icons/after-effects.svg",
+  },
+
+  [SkillNames.SUBSTANCE_PAINTER]: {
+    id: 15,
+    name: "substance-painter",
+    label: "Substance Painter",
+    shortDescription: "Texturing PBR et matériaux avancés.",
+    color: "#111111",
+    icon: "/assets/icons/substance-painter.svg",
+  },
+
+  [SkillNames.DAVINCI]: {
+    id: 16,
+    name: "davinci",
+    label: "DaVinci Resolve",
+    shortDescription: "Étalonnage couleur et post-production.",
+    color: "#111111",
+    icon: "/assets/icons/davinci.svg",
+  },
+
+  [SkillNames.WORDPRESS]: {
+    id: 17,
+    name: "wordpress",
+    label: "WordPress",
+    shortDescription: "CMS, thèmes et intégration web.",
+    color: "#111111",
+    icon: "/assets/icons/wordpress.svg",
+  },
+
+  [SkillNames.SPLINE]: {
+    id: 18,
+    name: "spline",
+    label: "Spline",
+    shortDescription: "Scènes 3D interactives pour le web.",
+    color: "#111111",
+    icon: "/assets/icons/spline.svg",
+  },
+
+  [SkillNames.TWINE]: {
+    id: 19,
+    name: "twine",
+    label: "Twine",
+    shortDescription: "Narration interactive et storytelling.",
+    color: "#111111",
+    icon: "/assets/icons/twine.svg",
+  },
+
+  [SkillNames.CHATGPT]: {
+    id: 20,
+    name: "chatgpt",
+    label: "ChatGPT",
+    shortDescription: "Aide à la conception, logique et rédaction.",
+    color: "#111111",
+    icon: "/assets/icons/chatgpt.svg",
+  },
+
+  [SkillNames.VISUAL_STUDIO_CODE]: {
+    id: 21,
+    name: "visual-studio-code",
+    label: "VS Code",
+    shortDescription: "IDE, extensions et workflow dev.",
+    color: "#111111",
+    icon: "/assets/icons/visual-studio-code.svg",
+  },
+
+  [SkillNames.XCODE]: {
+    id: 22,
+    name: "xcode",
+    label: "Xcode",
+    shortDescription: "Développement Apple et debugging.",
+    color: "#111111",
+    icon: "/assets/icons/xcode.svg",
+  },
+
+  [SkillNames.PYTHON]: {
+    id: 23,
+    name: "python",
+    label: "Python",
+    shortDescription: "Scripts, automatisation et logique backend.",
+    color: "#111111",
+    icon: "/assets/icons/python.svg",
+  },
+
+  [SkillNames.SUITE_OFFICE]: {
+    id: 24,
+    name: "suite-office",
+    label: "Suite Office",
+    shortDescription: "Documents, présentations et organisation.",
+    color: "#111111",
+    icon: "/assets/icons/office.svg",
   },
 };
 
