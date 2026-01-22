@@ -157,9 +157,9 @@ export const SKILLS: Record<SkillNames, Skill> = {
     icon: "/assets/icons/premiere-pro.svg",
   },
 
-  [SkillNames.AFTER_EFFECTs]: {
+  [SkillNames.AFTER_EFFECTS]: {
     id: 14,
-    name: "after-effectS",
+    name: "after-effects",
     label: "After Effects",
     shortDescription: "Motion design et effets visuels.",
     color: "#111111",
