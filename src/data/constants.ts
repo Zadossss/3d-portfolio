@@ -289,7 +289,7 @@ export const EXPERIENCE: Experience[] = [
       SkillNames.BLENDER,
       SkillNames.FIGMA,
       SkillNames.JS,
-      SkillNames.HTML5,
+      SkillNames.HTML,
       SkillNames.CSS,
       SkillNames.JSON,
       SkillNames.WORDPRESS,
