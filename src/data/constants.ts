@@ -304,7 +304,6 @@ export const EXPERIENCE: Experience[] = [
       SkillNames.PREMIERE_PRO,
       SkillNames.ILLUSTRATOR,
       SkillNames.INDESIGN,
-      SkillNames.CANVA,
     ],
   },
 ];
