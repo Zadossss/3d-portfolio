@@ -16,7 +16,7 @@ export enum SkillNames {
   LIGHTROOM = "lightroom",
 
   PREMIERE_PRO = "premiere-pro",
-  AFTER_EFFECT = "after-effect",
+  AFTER_EFFECTS = "after-effects",
   SUBSTANCE_PAINTER = "substance-painter",
   DAVINCI = "davinci",
 
@@ -157,9 +157,9 @@ export const SKILLS: Record<SkillNames, Skill> = {
     icon: "/assets/icons/premiere-pro.svg",
   },
 
-  [SkillNames.AFTER_EFFECT]: {
+  [SkillNames.AFTER_EFFECTs]: {
     id: 14,
-    name: "after-effect",
+    name: "after-effectS",
     label: "After Effects",
     shortDescription: "Motion design et effets visuels.",
     color: "#111111",
