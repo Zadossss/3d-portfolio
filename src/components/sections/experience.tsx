@@ -90,11 +90,11 @@ const ExperienceCard = ({
                   variant="outline"
                   className="gap-2 text-xs font-normal bg-secondary/30 hover:bg-secondary/50 transition-colors border-transparent"
                 >
-                  <img
-                    src={skill.icon}
-                    alt={skill.label}
-                    className="w-3.5 h-3.5 object-contain opacity-80"
-                  />
+                    <img
+                      src={skill.icon}
+                      alt={skill.label}
+                      className="w-3.5 h-3.5 object-contain opacity-80 brightness-0 saturate-100 invert"
+                    />
                   {skill.label}
                 </Badge>
               );
