@@ -6,7 +6,11 @@ const links: Link[] = [
     href: '/',
     thumbnail: '/assets/nav-link-previews/landing.png'
   },
-
+  {
+    title: 'Expérience',
+    href: 'experience',
+    thumbnail: '/assets/nav-link-previews/landing.png'
+  },
   {
     title: 'Skills',
     href: '/#skills',
