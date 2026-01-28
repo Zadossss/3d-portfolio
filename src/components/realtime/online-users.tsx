@@ -29,7 +29,7 @@ const OnlineUsers = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isEditingProfile, setIsEditingProfile] = useState(false);
 
-  const currentUser = users.find(u => u.socketId === socket?.id);
+  const currentUser = users.find((u) => u.socketId === socket?.id);
   const { playSendSound, playReceiveSound } = useSounds();
   const prevMsgsLength = useRef(msgs.length);
 
@@ -38,10 +38,11 @@ const OnlineUsers = () => {
       const isSmallBatch = msgs.length - prevMsgsLength.current <= 2;
       const lastMsg = msgs[msgs.length - 1];
       let isRecent = true;
+
       if (lastMsg?.createdAt) {
         const msgTime = new Date(lastMsg.createdAt).getTime();
         const now = Date.now();
-        // If message is older than 10 seconds, assume it's history
+        // Si le message a plus de 10 secondes, on considère que c’est l’historique
         if (now - msgTime > 10000) isRecent = false;
       }
 
@@ -56,13 +57,12 @@ const OnlineUsers = () => {
     prevMsgsLength.current = msgs.length;
   }, [msgs, playSendSound, playReceiveSound, currentUser]);
 
-  // Use custom hooks
   const {
     chatContainer,
     showScrollButton,
     unreads,
     scrollToBottom,
-    isAtBottomRef
+    isAtBottomRef,
   } = useChatScroll(
     isOpen,
     msgs.length,
@@ -70,11 +70,7 @@ const OnlineUsers = () => {
     msgs[msgs.length - 1]?.sessionId
   );
 
-  const {
-    typingUsers,
-    handleTyping,
-    getTypingText
-  } = useTyping(
+  const { typingUsers, handleTyping, getTypingText } = useTyping(
     socket,
     currentUser,
     scrollToBottom,
@@ -87,11 +83,19 @@ const OnlineUsers = () => {
     });
   };
 
-  const updateProfile = ({ name, avatar, color }: { name: string; avatar: string, color?: string }) => {
+  const updateProfile = ({
+    name,
+    avatar,
+    color,
+  }: {
+    name: string;
+    avatar: string;
+    color?: string;
+  }) => {
     socket?.emit("update-user", {
       username: name,
       avatar,
-      color
+      color,
     });
     localStorage.setItem("username", name);
     localStorage.setItem("avatar", avatar);
@@ -107,7 +111,7 @@ const OnlineUsers = () => {
         onOpenChange={(newOpen) => {
           if (!newOpen && isEditingProfile) return;
           setIsOpen(newOpen);
-          if (!newOpen) setShowUserList(false)
+          if (!newOpen) setShowUserList(false);
         }}
       >
         <PopoverTrigger asChild>
@@ -125,40 +129,53 @@ const OnlineUsers = () => {
                   initial={{ scale: 0.5, opacity: 1 }}
                   animate={{ scale: [0.1, 2], opacity: [1, 0] }}
                   transition={{
-                    duration: .4,
+                    duration: 0.4,
                     delay: 0,
                     ease: "easeOut",
                     repeat: Infinity,
                     repeatDelay: 2,
                   }}
-                  className={cn("absolute -inset-1 rounded-full", unreads > 0 ? "bg-green-500/40" : "bg-transparent")}
+                  className={cn(
+                    "absolute -inset-1 rounded-full",
+                    unreads > 0 ? "bg-green-500/40" : "bg-transparent"
+                  )}
                 />
                 <Users2 className="w-6 h-6" />
               </div>
 
-              <span className={cn(
-                "absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold transition-colors",
-                unreads > 0 ? "bg-green-500 text-white" : "bg-red-500 text-white"
-              )}>
+              <span
+                className={cn(
+                  "absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold transition-colors",
+                  unreads > 0 ? "bg-green-500 text-white" : "bg-red-500 text-white"
+                )}
+              >
                 {unreads > 0 ? unreads : users.length}
               </span>
             </div>
           </Button>
         </PopoverTrigger>
+
         <PopoverContent
           className={cn(
-            "w-80 min-h-[400px] sm:w-96 p-0 border-none shadow-2xl overflow-hidden rounded-xl mr-4 mb-4 flex flex-col",
+            "w-80 min-h-[400px] sm:w-96 p-0 border-none shadow-2xl overflow-hidden rounded-xl mr-4 mb-4 flex flex-col z-[9999]",
             THEME.bg.primary,
             THEME.text.primary
           )}
           side="top"
         >
-          {/* Header */}
-          <div className={cn("h-12 flex items-center justify-between px-4 shadow-sm border-b shrink-0", THEME.bg.secondary, THEME.border.primary)}>
+          {/* En-tête */}
+          <div
+            className={cn(
+              "h-12 flex items-center justify-between px-4 shadow-sm border-b shrink-0",
+              THEME.bg.secondary,
+              THEME.border.primary
+            )}
+          >
             <div className={cn("flex items-center gap-2 font-semibold", THEME.text.header)}>
               <Hash className={cn("w-5 h-5", THEME.text.secondary)} />
-              <span>general</span>
+              <span>général</span>
             </div>
+
             <div className="flex items-center gap-2">
               {currentUser && (
                 <Button
@@ -171,13 +188,14 @@ const OnlineUsers = () => {
                     "hover:text-[#060607] dark:hover:text-white"
                   )}
                   onClick={() => setIsEditingProfile(true)}
-                  title="Edit Profile"
+                  title="Modifier le profil"
                 >
                   <div className="relative w-8 h-8">
                     <img
                       src={getAvatarUrl(currentUser.avatar)}
                       className="w-full h-full rounded-full ring-1 ring-black/10 dark:ring-white/10"
-                      style={{ backgroundColor: currentUser.color || '#60a5fa' }}
+                      style={{ backgroundColor: currentUser.color || "#60a5fa" }}
+                      alt=""
                     />
                     <div className="absolute -bottom-1 -right-1 bg-[#5865f2] rounded-full border-2 border-[var(--bg-primary)]">
                       <Settings className="w-3 h-3 text-white" />
@@ -202,9 +220,7 @@ const OnlineUsers = () => {
               >
                 <div className="flex items-center gap-1">
                   <div className="w-2 h-2 bg-green-500 rounded-full" />
-                  <span>
-                    {users.length}
-                  </span>
+                  <span>{users.length}</span>
                 </div>
                 <Users className="w-5 h-5" />
               </Button>
@@ -228,7 +244,7 @@ const OnlineUsers = () => {
             <ChatInput
               onSendMessage={sendMessage}
               onTyping={handleTyping}
-              placeholder="Message #general"
+              placeholder="Message #général"
             />
 
             <UserList
@@ -240,7 +256,6 @@ const OnlineUsers = () => {
               onEditProfile={() => setIsEditingProfile(true)}
             />
           </div>
-
         </PopoverContent>
       </Popover>
 
