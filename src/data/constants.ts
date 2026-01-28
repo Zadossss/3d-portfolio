@@ -320,18 +320,18 @@ export const EXPERIENCE: Experience[] = [
 
 export const themeDisclaimers = {
   light: [
-    "Warning: Light mode emits a gazillion lumens of pure radiance!",
-    "Caution: Light mode ahead! Please don't try this at home.",
-    "Only trained professionals can handle this much brightness. Proceed with sunglasses!",
-    "Brace yourself! Light mode is about to make everything shine brighter than your future.",
-    "Flipping the switch to light mode... Are you sure your eyes are ready for this?",
+    "Attention : le mode clair émet un milliard de lumens de pure luminosité !",
+    "Avertissement : mode clair activé ! À ne pas tenter chez soi.",
+    "Seuls des professionnels entraînés peuvent supporter autant de lumière. Lunettes de soleil recommandées !",
+    "Accrochez-vous ! Le mode clair va faire briller le monde plus fort que votre avenir.",
+    "Passage en mode clair… Êtes-vous sûr que vos yeux sont prêts pour ça ?",
   ],
   dark: [
-    "Light mode? I thought you went insane... but welcome back to the dark side!",
-    "Switching to dark mode... How was life on the bright side?",
-    "Dark mode activated! Thanks you from the bottom of my heart, and my eyes too.",
-    "Welcome back to the shadows. How was life out there in the light?",
-    "Dark mode on! Finally, someone who understands true sophistication.",
+    "Le mode clair ? J’ai cru que vous aviez perdu la raison… mais bienvenue de retour du côté obscur !",
+    "Activation du mode sombre… Alors, comment était la vie du côté lumineux ?",
+    "Mode sombre activé ! Merci du fond du cœur — et de mes yeux aussi.",
+    "Bienvenue dans l’ombre. Alors, comment était la vie là-bas, dans la lumière ?",
+    "Mode sombre activé ! Enfin quelqu’un qui comprend la vraie sophistication.",
   ],
 };
 
