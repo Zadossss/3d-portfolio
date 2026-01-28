@@ -9,12 +9,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const ExperienceSection = () => {
   return (
     <SectionWrapper
-      className="flex flex-col items-center justify-center min-h-[120vh] py-20 z-10"
+      // ✅ IMPORTANT : on supprime le z-10 (qui pouvait passer au-dessus du header/menu)
+      // ✅ On force la section à rester "en dessous" dans la pile d’affichage
+      className="relative z-0 flex flex-col items-center justify-center min-h-[120vh] py-20"
     >
       <div className="w-full max-w-4xl px-4 md:px-8 mx-auto">
         <SectionHeader
           id="experience"
-          title="EXPERIENCE"
+          // ✅ Traduction
+          title="EXPÉRIENCE"
           desc="Mon parcours professionnel."
           className="mb-12 md:mb-20 mt-0"
         />
@@ -69,11 +72,16 @@ const ExperienceCard = ({
                 {experience.company}
               </div>
             </div>
-            <Badge variant="secondary" className="w-fit font-mono text-xs font-normal">
+
+            <Badge
+              variant="secondary"
+              className="w-fit font-mono text-xs font-normal"
+            >
               {experience.startDate} - {experience.endDate}
             </Badge>
           </div>
         </CardHeader>
+
         <CardContent className="space-y-6">
           <ul className="list-disc list-outside ml-4 space-y-2 text-base text-muted-foreground leading-relaxed">
             {experience.description.map((point, i) => (
@@ -90,11 +98,11 @@ const ExperienceCard = ({
                   variant="outline"
                   className="gap-2 text-xs font-normal bg-secondary/30 hover:bg-secondary/50 transition-colors border-transparent"
                 >
-                    <img
-                      src={skill.icon}
-                      alt={skill.label}
-                      className="w-3.5 h-3.5 object-contain opacity-80 brightness-0 saturate-100 invert"
-                    />
+                  <img
+                    src={skill.icon}
+                    alt={skill.label}
+                    className="w-3.5 h-3.5 object-contain opacity-80 brightness-0 saturate-100 invert"
+                  />
                   {skill.label}
                 </Badge>
               );
