@@ -17,23 +17,22 @@ const ContactSection = () => {
     <SectionWrapper id="contact" className="min-h-screen max-w-7xl mx-auto ">
       <SectionHeader id='contact' className="relative mb-14" title={
         <>
-          LET&apos;S WORK <br />
-          TOGETHER
+          TRAVAILLONS ENSEMBLE
         </>} />
       <div className="grid grid-cols-1 md:grid-cols-2 z-[9999] mx-4">
         <Card className="min-w-7xl bg-white/70 dark:bg-black/70 backdrop-blur-sm rounded-xl mt-10 md:mt-20">
           <CardHeader>
-            <CardTitle className="text-4xl">Contact Form</CardTitle>
+            <CardTitle className="text-4xl">Contact </CardTitle>
             <CardDescription>
-              Please contact me directly at{" "}
+              Vous pouvez me contacter directement {" "}
               <a
                 target="_blank"
                 href={`mailto:${config.email}`}
                 className="text-gray-200 cursor-can-hover rounded-lg"
               >
-                {config.email.replace(/@/g, "(at)")}
+                {config.email.replace(/@/g,)}
               </a>{" "}
-              or drop your info here.
+              ou dites moi ce que vous cherchez ici.
             </CardDescription>
           </CardHeader>
           <CardContent>
