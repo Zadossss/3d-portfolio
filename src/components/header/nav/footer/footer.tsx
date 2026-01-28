@@ -56,7 +56,6 @@ export default function Footer() {
           animate="enter"
           exit="exit"
         >
-          Newsletter
         </motion.li>
       </ul>
     </div>
