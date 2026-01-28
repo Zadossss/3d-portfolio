@@ -303,9 +303,9 @@ export const EXPERIENCE: Experience[] = [
     title: "APTITUDE X",
     company: "Stage Canada",
     description: [
-      "Création de contenus visuels et présentations.",
-      "UI/UX, motion design, exports web.",
-      "Organisation et production rapide de livrables.",
+      "Création de contenus visuels pour le développement d'un jeux vidéo.",
+      "UI/UX design, déploiement sur Testflight.",
+      "Conception et intégration d’un modèle 3D pour une expérience en réalité augmentée.",
     ],
     skills: [
       SkillNames.BLENDER,
