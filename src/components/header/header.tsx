@@ -67,11 +67,11 @@ const Header = ({ loader }: HeaderProps) => {
           <div className="relative hidden md:flex items-center">
             <motion.p
               variants={opacity}
-              animate={!isActive ? "open" : "closed"}
+              animate={!isActive ? "ouvrir" : "fermer"}
             >
               Menu
             </motion.p>
-            <motion.p variants={opacity} animate={isActive ? "open" : "closed"}>
+            <motion.p variants={opacity} animate={isActive ? "ouvrir" : "fermer"}>
               Close
             </motion.p>
           </div>
@@ -84,7 +84,7 @@ const Header = ({ loader }: HeaderProps) => {
       <motion.div
         variants={background}
         initial="initial"
-        animate={isActive ? "open" : "closed"}
+        animate={isActive ? "ouvrir" : "fermer"}
         className={styles.background}
       ></motion.div>
       <AnimatePresence mode="wait">
