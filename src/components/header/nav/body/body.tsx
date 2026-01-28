@@ -78,8 +78,8 @@ export default function Body({
               variants={blur}
               animate={
                 selectedLink.isActive && selectedLink.index !== index
-                  ? "open"
-                  : "closed"
+                  ? "ouvrir"
+                  : "fermer"
               }
             >
               {getChars(title)}
