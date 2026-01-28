@@ -169,7 +169,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
   [SkillNames.SUBSTANCE_PAINTER]: {
     id: 15,
     name: "substance-painter",
-    label: "Substance      Painter",
+    label: "Sub Painter",
     shortDescription: "Texturing PBR et matériaux avancés.",
     color: "#111111",
     icon: "/assets/icons/substance-painter.svg",
@@ -178,7 +178,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
   [SkillNames.DAVINCI]: {
     id: 16,
     name: "davinci",
-    label: "DaVinci      Resolve",
+    label: "DaVinci",
     shortDescription: "Étalonnage couleur et post-production.",
     color: "#111111",
     icon: "/assets/icons/davinci.svg",
