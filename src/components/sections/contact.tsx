@@ -24,15 +24,15 @@ const ContactSection = () => {
           <CardHeader>
             <CardTitle className="text-4xl">Contact </CardTitle>
             <CardDescription>
-              Vous pouvez me contacter directement {" "}
+              Vous pouvez me contacter directement à l'adresse {" "}
               <a
                 target="_blank"
                 href={`mailto:${config.email}`}
                 className="text-gray-200 cursor-can-hover rounded-lg"
               >
-                {config.email.replace(/@/g,'')}
+                {config.email}
               </a>{" "}
-              ou dites moi ce que vous cherchez ici.
+              ou me dire ce que vous cherchez ici.
             </CardDescription>
           </CardHeader>
           <CardContent>
