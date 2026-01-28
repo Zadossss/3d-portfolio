@@ -43,10 +43,10 @@ export const ChatMessageList = ({
               <div className={cn("w-16 h-16 rounded-full flex items-center justify-center mb-2", THEME.bg.welcome)}>
                 <Hash className={cn("w-10 h-10", THEME.text.header)} />
               </div>
-              <h3 className={cn("text-xl font-bold", THEME.text.header)}>Welcome to #general!</h3>
+              <h3 className={cn("text-xl font-bold", THEME.text.header)}>Bienvenue dans #général !</h3>
               <p className={cn("text-sm max-w-[200px]", THEME.text.secondary)}>
-                This is the start of the legendary conversation.
-                {isSingleUser && <span className="block mt-2 text-yellow-600 dark:text-yellow-400/80 text-xs">(It's just you right now, invite a friend!)</span>}
+                C’est le début d’une conversation légendaire.
+                {isSingleUser && <span className="block mt-2 text-yellow-600 dark:text-yellow-400/80 text-xs">(Il n’y a que vous pour l’instant, invitez un ami !)</span>}
               </p>
             </div>
           )}
@@ -146,12 +146,12 @@ export const ChatMessageList = ({
           >
             {unreads > 0 ? (
               <>
-                <span>{unreads} new messages</span>
+                <span>{unreads} Nouveaux messages</span>
                 <ArrowDown className="w-3 h-3" />
               </>
             ) : (
               <>
-                <span>Jump to present</span>
+                <span>Revenir au present</span>
                 <ArrowDown className="w-3 h-3" />
               </>
             )}
