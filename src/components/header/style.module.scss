@@ -1,14 +1,19 @@
 .header {
   z-index: 9;
-  // background-color: hsl(var(--background) / .8);
   position: fixed;
   width: 100%;
   box-sizing: border-box;
   padding: 15px;
-  backdrop-filter: blur(12px);
+
+  /* ✅ ENLÈVE LE FLOU */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  /* ✅ Option : un fond léger tout le temps */
+  background-color: hsl(var(--background) / 0.6);
 
   .background {
-    background-color: hsl(240 10% 3.9%); // constant color instead of using a css variable
+    background-color: hsl(240 10% 3.9%);
     opacity: 0.5;
     height: 100%;
     width: 100%;
@@ -74,7 +79,7 @@
 
         &::after,
         &::before {
-          content: '';
+          content: "";
           height: 1px;
           width: 100%;
           background-color: hsl(var(--foreground));
