@@ -8,32 +8,29 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const ExperienceSection = () => {
   return (
-    <SectionWrapper
-      // ✅ IMPORTANT : on supprime le z-10 (qui pouvait passer au-dessus du header/menu)
-      // ✅ On force la section à rester "en dessous" dans la pile d’affichage
-      className="relative z-0 flex flex-col items-center justify-center min-h-[120vh] py-20"
-    >
-      <div className="w-full max-w-4xl px-4 md:px-8 mx-auto">
-        <SectionHeader
-          id="experience"
-          // ✅ Traduction
-          title="EXPÉRIENCE"
-          desc="Mon parcours professionnel."
-          className="mb-12 md:mb-20 mt-0"
-        />
+    // ✅ L’ID doit être sur un vrai élément HTML
+    <section id="experience" className="relative z-0">
+      <SectionWrapper className="flex flex-col items-center justify-center min-h-[120vh] py-20">
+        <div className="w-full max-w-4xl px-4 md:px-8 mx-auto">
+          <SectionHeader
+            // ❌ on n’a plus besoin de id ici (tu peux le laisser si tu veux, mais il ne sert pas)
+            title="EXPÉRIENCE"
+            desc="Mon parcours professionnel."
+            className="mb-12 md:mb-20 mt-0"
+          />
 
-        <div className="flex flex-col gap-8 md:gap-12 relative">
-          {/* Connector Line - simplified to a subtle border */}
-          <div className="absolute left-8 md:left-1/2 top-4 bottom-4 w-px bg-border hidden md:block -translate-x-1/2" />
+          <div className="flex flex-col gap-8 md:gap-12 relative">
+            <div className="absolute left-8 md:left-1/2 top-4 bottom-4 w-px bg-border hidden md:block -translate-x-1/2" />
 
-          {EXPERIENCE.map((exp, index) => (
-            <div key={exp.id} className="relative">
-              <ExperienceCard experience={exp} index={index} />
-            </div>
-          ))}
+            {EXPERIENCE.map((exp, index) => (
+              <div key={exp.id} className="relative">
+                <ExperienceCard experience={exp} index={index} />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </SectionWrapper>
+      </SectionWrapper>
+    </section>
   );
 };
 
@@ -48,11 +45,7 @@ const ExperienceCard = ({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.4,
-        delay: index * 0.1,
-        ease: "easeOut",
-      }}
+      transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
       viewport={{ once: true, margin: "-50px" }}
     >
       <Card
@@ -73,10 +66,7 @@ const ExperienceCard = ({
               </div>
             </div>
 
-            <Badge
-              variant="secondary"
-              className="w-fit font-mono text-xs font-normal"
-            >
+            <Badge variant="secondary" className="w-fit font-mono text-xs font-normal">
               {experience.startDate} - {experience.endDate}
             </Badge>
           </div>
