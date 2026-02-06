@@ -8,12 +8,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const ExperienceSection = () => {
   return (
-    // ✅ L’ID doit être sur un vrai élément HTML
+    // ✅ Ancre réelle pour /#experience
     <section id="experience" className="relative z-0">
       <SectionWrapper className="flex flex-col items-center justify-center min-h-[120vh] py-20">
         <div className="w-full max-w-4xl px-4 md:px-8 mx-auto">
           <SectionHeader
-            // ❌ on n’a plus besoin de id ici (tu peux le laisser si tu veux, mais il ne sert pas)
+            // ✅ obligatoire (TypeScript)
+            id="experience"
+            // ✅ FR
             title="EXPÉRIENCE"
             desc="Mon parcours professionnel."
             className="mb-12 md:mb-20 mt-0"
