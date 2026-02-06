@@ -5,12 +5,12 @@
   box-sizing: border-box;
   padding: 15px;
 
-  /* ✅ ENLÈVE LE FLOU */
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  /* ✅ FLOU RÉACTIVÉ */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
-  /* ✅ Option : un fond léger tout le temps */
-  background-color: hsl(var(--background) / 0.6);
+  /* Léger fond pour que le flou soit visible */
+  background-color: hsl(var(--background) / 0.4);
 
   .background {
     background-color: hsl(240 10% 3.9%);
@@ -31,7 +31,7 @@
     position: relative;
 
     p {
-      margin: 0px;
+      margin: 0;
     }
 
     a {
@@ -41,36 +41,12 @@
       left: 0;
     }
 
-    .shopContainer {
-      display: flex;
-      gap: 30px;
-      position: absolute;
-      right: 0;
-
-      .shop {
-        display: none;
-      }
-    }
-
     .el {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
       cursor: pointer;
-
-      .label {
-        position: relative;
-        display: flex;
-        align-items: center;
-      }
-
-      p {
-        &:nth-of-type(2) {
-          position: absolute;
-          opacity: 0;
-        }
-      }
 
       .burger {
         width: 22.5px;
@@ -83,7 +59,6 @@
           height: 1px;
           width: 100%;
           background-color: hsl(var(--foreground));
-          position: relative;
           display: block;
           transition: all 1s cubic-bezier(0.76, 0, 0.24, 1);
         }
@@ -108,19 +83,6 @@
           top: 1px;
         }
       }
-    }
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .header {
-    .bar {
-      font-size: 15px;
-    }
-
-    .shop {
-      display: block;
-      cursor: pointer;
     }
   }
 }
