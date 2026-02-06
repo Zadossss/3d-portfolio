@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -17,7 +16,7 @@ interface HeaderProps {
 }
 
 const Header = ({ loader }: HeaderProps) => {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState<boolean>(false);
 
   return (
     <motion.header
@@ -37,7 +36,7 @@ const Header = ({ loader }: HeaderProps) => {
     >
       <div className={cn(styles.bar, "flex items-center justify-between")}>
         <Link href="/" className="flex items-center justify-center">
-          <Button variant="link" className="text-md">
+          <Button variant={"link"} className="text-md">
             {config.author}
           </Button>
         </Link>
@@ -46,24 +45,23 @@ const Header = ({ loader }: HeaderProps) => {
         <OnlineUsers />
 
         <Button
-          variant="ghost"
-          onClick={() => setIsActive((v) => !v)}
+          variant={"ghost"}
+          onClick={() => setIsActive(!isActive)}
           className={cn(
             styles.el,
-            "m-0 p-0 h-6 bg-transparent flex items-center justify-center"
+            "m-0 p-0 h-6 bg-transparent flex items-center justify-center gap-2"
           )}
         >
-          <div className="relative hidden md:flex items-center">
-            <motion.p variants={opacity} animate={!isActive ? "ouvrir" : "fermer"}>
-              Menu
-            </motion.p>
-            <motion.p variants={opacity} animate={isActive ? "ouvrir" : "fermer"}>
-              Fermer
-            </motion.p>
-          </div>
+          {/* ✅ TEXTE À CÔTÉ DE LA CROIX */}
+          <span className="hidden md:inline text-sm">
+            {isActive ? "Fermer" : "Menu"}
+          </span>
 
+          {/* burger/croix */}
           <div
-            className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}
+            className={`${styles.burger} ${
+              isActive ? styles.burgerActive : ""
+            }`}
           />
         </Button>
       </div>
