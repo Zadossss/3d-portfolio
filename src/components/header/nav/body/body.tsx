@@ -21,6 +21,8 @@ interface BodyProps {
   setIsActive: (isActive: boolean) => void;
 }
 
+const SECTION_IDS = ["experience", "skills", "projects", "contact"]; // ✅ adapte si besoin
+
 export default function Body({
   links,
   selectedLink,
@@ -29,28 +31,61 @@ export default function Body({
 }: BodyProps) {
   const [currentHref, setCurrentHref] = useState("/");
 
-  // ✅ Fonction unique pour synchroniser l'état avec l'URL (pathname + hash)
   const syncCurrentHref = () => {
     if (typeof window === "undefined") return;
     const { pathname, hash } = window.location;
     setCurrentHref(pathname + hash);
   };
 
-  // ✅ 1) Sync au montage
   useEffect(() => {
     syncCurrentHref();
   }, []);
 
-  // ✅ 2) Sync quand le hash change (le VRAI fix pour ton underline)
+  // ✅ met à jour l'UI si le hash change (clic)
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const onHashChange = () => syncCurrentHref();
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  // ✅ SCROLLSPY : met à jour le hash quand tu scrolles
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const onHashChange = () => syncCurrentHref();
-    window.addEventListener("hashchange", onHashChange);
+    const sections = SECTION_IDS
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
 
-    return () => {
-      window.removeEventListener("hashchange", onHashChange);
-    };
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // On garde uniquement celles visibles
+        const visibles = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0));
+
+        if (!visibles.length) return;
+
+        const id = (visibles[0].target as HTMLElement).id;
+
+        // ✅ évite de spammer l'history si déjà le bon hash
+        if (window.location.hash !== `#${id}`) {
+          window.history.replaceState(null, "", `/#${id}`);
+          syncCurrentHref();
+        }
+      },
+      {
+        // Ajuste pour que ça “prenne” quand le header est passé
+        root: null,
+        threshold: [0.25, 0.4, 0.6],
+        rootMargin: "-20% 0px -65% 0px",
+      }
+    );
+
+    sections.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
   const getChars = (word: string) => {
@@ -73,30 +108,19 @@ export default function Body({
     return chars;
   };
 
-  // ✅ IMPORTANT : au clic, on force l'URL à prendre le bon hash
-  // Sinon tu scrolles mais ton state reste bloqué sur l'ancien (ex: #skills)
+  // ✅ clic : force URL + underline immédiat
   const handleClick = (href: string) => {
     if (typeof window === "undefined") return;
-
-    // ferme le menu
     setIsActive(false);
 
-    // Si c'est un lien interne vers une ancre (#experience / /#experience)
     const isHashLink = href.startsWith("#") || href.startsWith("/#");
     if (!isHashLink) return;
 
     const id = href.replace("/#", "").replace("#", "");
     if (!id) return;
 
-    // ✅ met à jour l’URL sans rechargement
     window.history.replaceState(null, "", `/#${id}`);
-
-    // ✅ met à jour tout de suite l’UI (underline)
     syncCurrentHref();
-
-    // (optionnel) si tu veux forcer le scroll natif au cas où
-    // const el = document.getElementById(id);
-    // el?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -112,6 +136,7 @@ export default function Body({
             href={href}
             target={target}
             className="cursor-can-hover rounded-lg"
+            scroll={false}
             onClick={() => handleClick(href)}
           >
             <motion.p
