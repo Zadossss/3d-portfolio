@@ -8,31 +8,26 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const ExperienceSection = () => {
   return (
-    // ✅ Ancre réelle pour /#experience
-    <section id="experience" className="relative z-0">
-      <SectionWrapper className="flex flex-col items-center justify-center min-h-[120vh] py-20">
-        <div className="w-full max-w-4xl px-4 md:px-8 mx-auto">
-          <SectionHeader
-            // ✅ obligatoire (TypeScript)
-            id="experience"
-            // ✅ FR
-            title="EXPÉRIENCE"
-            desc="Mon parcours professionnel."
-            className="mb-12 md:mb-20 mt-0"
-          />
+    <SectionWrapper className="relative z-0 flex flex-col items-center justify-center min-h-[120vh] py-20">
+      <div className="w-full max-w-4xl px-4 md:px-8 mx-auto">
+        <SectionHeader
+          id="experience"
+          title="EXPÉRIENCE"
+          desc="Mon parcours professionnel."
+          className="mb-12 md:mb-20 mt-0"
+        />
 
-          <div className="flex flex-col gap-8 md:gap-12 relative">
-            <div className="absolute left-8 md:left-1/2 top-4 bottom-4 w-px bg-border hidden md:block -translate-x-1/2" />
+        <div className="flex flex-col gap-8 md:gap-12 relative">
+          <div className="absolute left-8 md:left-1/2 top-4 bottom-4 w-px bg-border hidden md:block -translate-x-1/2" />
 
-            {EXPERIENCE.map((exp, index) => (
-              <div key={exp.id} className="relative">
-                <ExperienceCard experience={exp} index={index} />
-              </div>
-            ))}
-          </div>
+          {EXPERIENCE.map((exp, index) => (
+            <div key={exp.id} className="relative">
+              <ExperienceCard experience={exp} index={index} />
+            </div>
+          ))}
         </div>
-      </SectionWrapper>
-    </section>
+      </div>
+    </SectionWrapper>
   );
 };
 
