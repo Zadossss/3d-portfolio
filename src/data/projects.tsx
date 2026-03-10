@@ -284,7 +284,6 @@ const projects: Project[] = [
     skills: {
     frontend: [],
     backend: [],
-},
     },
     get content() {
       return (
