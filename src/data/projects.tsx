@@ -127,6 +127,32 @@ const PROJECT_SKILLS = {
       />
     ),
   },
+    photoshop: {
+    title: "Photoshop",
+    bg: "black",
+    fg: "white",
+    icon: (
+      <Image
+        src="/assets/icons/photoshop.svg"
+        alt="Photoshop"
+        width={20}
+        height={20}
+      />
+    ),
+  },
+      spline: {
+    title: "Spline",
+    bg: "black",
+    fg: "white",
+    icon: (
+      <Image
+        src="/assets/icons/spline.svg"
+        alt="Spline"
+        width={20}
+        height={20}
+      />
+    ),
+  },
 };
 
 export type Project = {
