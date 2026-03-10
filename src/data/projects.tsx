@@ -201,17 +201,8 @@ const projects: Project[] = [
     live: "https://www.couponluxury.com/",
     skills: {
       frontend: [
-        PROJECT_SKILLS.js,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.chakra,
-        PROJECT_SKILLS.vue,
       ],
       backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.prisma,
-        PROJECT_SKILLS.postgres,
-        PROJECT_SKILLS.docker,
       ],
     },
     get content(): JSX.Element {
@@ -292,12 +283,7 @@ const projects: Project[] = [
     live: "https://thebookingdesk.com/",
     skills: {
       frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.aceternity,
-        PROJECT_SKILLS.tailwind,
       ],
-      backend: [PROJECT_SKILLS.sanity],
     },
     get content() {
       return (
@@ -359,13 +345,6 @@ const projects: Project[] = [
     github:"https://github.com/Naresh-Khatri/Portfolio",
     skills: {
       frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.shadcn,
-        PROJECT_SKILLS.aceternity,
-        PROJECT_SKILLS.framerMotion,
-        PROJECT_SKILLS.tailwind,
-        PROJECT_SKILLS.spline,
       ],
       backend: [],
     },
@@ -424,8 +403,10 @@ const projects: Project[] = [
     live: "https://ghostchat.vercel.app",
     github:"https://github.com/Naresh-Khatri/GhostChat",
     skills: {
-      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.next, PROJECT_SKILLS.chakra],
-      backend: [PROJECT_SKILLS.supabase],
+      frontend: [
+      ],
+      backend: [
+      ],
     },
     get content() {
       return (
@@ -459,12 +440,9 @@ const projects: Project[] = [
     screenshots: ["1.png"],
     live: "https://naresh-khatri.github.io/JNTUA-result-analyser-spa/#/",
     skills: {
-      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.vue],
+      frontend: [
+      ],
       backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.mongo,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.docker,
       ],
     },
     get content() {
