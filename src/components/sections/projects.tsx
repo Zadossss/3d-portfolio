@@ -8,7 +8,6 @@ import {
   ModalContent,
   ModalFooter,
   ModalTrigger,
-  ModalClose,
 } from "../ui/animated-modal";
 import { FloatingDock } from "../ui/floating-dock";
 import Link from "next/link";
@@ -31,10 +30,15 @@ const ProjectsSection = () => {
 };
 
 const Modall = ({ project }: { project: Project }) => {
+  const [open, setOpen] = React.useState(false);
+
   return (
     <div className="flex items-center justify-center">
-      <Modal>
-        <ModalTrigger className="bg-transparent flex justify-center group/modal-btn w-full">
+      <Modal open={open} onOpenChange={setOpen}>
+        <ModalTrigger
+          className="bg-transparent flex justify-center group/modal-btn w-full"
+          onClick={() => setOpen(true)}
+        >
           <div
             className="relative w-[400px] h-auto rounded-lg overflow-hidden"
             style={{ aspectRatio: "3 / 2" }}
@@ -64,11 +68,12 @@ const Modall = ({ project }: { project: Project }) => {
           </SmoothScroll>
 
           <ModalFooter className="gap-4">
-            <ModalClose asChild>
-              <button className="px-3 py-2 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28">
-                Fermer
-              </button>
-            </ModalClose>
+            <button
+              onClick={() => setOpen(false)}
+              className="px-3 py-2 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28"
+            >
+              Fermer
+            </button>
 
             <Link href={project.live} target="_blank" rel="noopener noreferrer">
               <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-3 py-2 rounded-md border border-black w-28">
