@@ -282,8 +282,9 @@ const projects: Project[] = [
     screenshots: ["1.png"],
     live: "https://thebookingdesk.com/",
     skills: {
-      frontend: [
-      ],
+    frontend: [],
+    backend: [],
+},
     },
     get content() {
       return (
