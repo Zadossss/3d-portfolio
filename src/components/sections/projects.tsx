@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import React from "react";
 import {
@@ -7,44 +8,42 @@ import {
   ModalContent,
   ModalFooter,
   ModalTrigger,
+  ModalClose,
 } from "../ui/animated-modal";
 import { FloatingDock } from "../ui/floating-dock";
 import Link from "next/link";
-
 import SmoothScroll from "../smooth-scroll";
 import projects, { Project } from "@/data/projects";
-import { cn } from "@/lib/utils";
 import { SectionHeader } from "./section-header";
-
 import SectionWrapper from "../ui/section-wrapper";
 
 const ProjectsSection = () => {
   return (
     <SectionWrapper id="projects" className="max-w-7xl mx-auto md:h-[130vh]">
-      <SectionHeader id='projects' title="PROJETS" />
-      <div className="grid grid-cols-1 md:grid-cols-3">
-        {projects.map((project, index) => (
-          <Modall key={project.src} project={project} />
+      <SectionHeader id="projects" title="Projects" />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {projects.map((project) => (
+          <Modall key={project.id} project={project} />
         ))}
       </div>
     </SectionWrapper>
   );
 };
+
 const Modall = ({ project }: { project: Project }) => {
   return (
     <div className="flex items-center justify-center">
       <Modal>
-        <ModalTrigger className="bg-transparent flex justify-center group/modal-btn">
+        <ModalTrigger className="bg-transparent flex justify-center group/modal-btn w-full">
           <div
             className="relative w-[400px] h-auto rounded-lg overflow-hidden"
-            style={{ aspectRatio: "3/2" }}
+            style={{ aspectRatio: "3 / 2" }}
           >
             <Image
-              className="absolute w-full h-full top-0 left-0 hover:scale-[1.05] transition-all"
+              className="absolute w-full h-full top-0 left-0 object-cover hover:scale-[1.05] transition-all duration-300"
               src={project.src}
               alt={project.title}
-              width={300}
-              height={300}
+              fill
             />
             <div className="absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-black via-black/85 to-transparent pointer-events-none">
               <div className="flex flex-col h-full items-start justify-end p-6">
@@ -56,19 +55,24 @@ const Modall = ({ project }: { project: Project }) => {
             </div>
           </div>
         </ModalTrigger>
-        <ModalBody className="md:max-w-4xl md:max-h-[80%] overflow-auto">
+
+        <ModalBody className="md:max-w-5xl md:max-h-[85vh] overflow-auto">
           <SmoothScroll isInsideModal={true}>
             <ModalContent>
               <ProjectContents project={project} />
             </ModalContent>
           </SmoothScroll>
+
           <ModalFooter className="gap-4">
-            <button className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28">
-              Cancel
-            </button>
-            <Link href={project.live} target="_blank">
-              <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
-                Visit
+            <ModalClose asChild>
+              <button className="px-3 py-2 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28">
+                Fermer
+              </button>
+            </ModalClose>
+
+            <Link href={project.live} target="_blank" rel="noopener noreferrer">
+              <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-3 py-2 rounded-md border border-black w-28">
+                Visiter
               </button>
             </Link>
           </ModalFooter>
@@ -77,51 +81,27 @@ const Modall = ({ project }: { project: Project }) => {
     </div>
   );
 };
+
 export default ProjectsSection;
 
 const ProjectContents = ({ project }: { project: Project }) => {
+  const allSkills = [
+    ...(project.skills.frontend || []),
+    ...(project.skills.backend || []),
+  ];
+
   return (
     <>
       <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
         {project.title}
       </h4>
-      <div className="flex justify-center items-center text-3xl mb-8">
-        <FloatingDock
-          items={[
-            ...(project.skills.frontend || []),
-            ...(project.skills.backend || []),
-          ]}
-        />
-      </div>
-      {/* <div className="flex justify-center items-center">
-        {project.screenshots.map((image, idx) => (
-          <motion.div
-            key={"images" + idx}
-            style={{
-              rotate: Math.random() * 20 - 10,
-            }}
-            whileHover={{
-              scale: 1.1,
-              rotate: 0,
-              zIndex: 100,
-            }}
-            whileTap={{
-              scale: 1.1,
-              rotate: 0,
-              zIndex: 100,
-            }}
-            className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 flex-shrink-0 overflow-hidden"
-          >
-            <Image
-              src={`${project.src.split("1.png")[0]}${image}`}
-              alt="screenshots"
-              width="500"
-              height="500"
-              className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover flex-shrink-0"
-            />
-          </motion.div>
-        ))}
-      </div> */}
+
+      {allSkills.length > 0 && (
+        <div className="flex justify-center items-center text-3xl mb-8">
+          <FloatingDock items={allSkills} />
+        </div>
+      )}
+
       {project.content}
     </>
   );
