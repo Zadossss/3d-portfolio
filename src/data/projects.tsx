@@ -215,7 +215,7 @@ const projects: Project[] = [
     skills: {
       frontend: [
         PROJECT_SKILLS.unreal,
-        PROJECT_SKILLS.Davinci,
+        PROJECT_SKILLS.davinci,
         PROJECT_SKILLS.blender,
       ],
       backend: [
