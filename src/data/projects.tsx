@@ -40,22 +40,11 @@ const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
         href={live}
       >
         <Button variant={"default"} size={"sm"}>
-          Visit Website
+          Jouer au jeu
           <ArrowUpRight className="ml-3 w-5 h-5" />
         </Button>
       </Link>
       {repo && (
-        <Link
-          className="font-mono underline flex gap-2"
-          rel="noopener"
-          target="_new"
-          href={repo}
-        >
-          <Button variant={"default"} size={"sm"}>
-            Github
-            <ArrowUpRight className="ml-3 w-5 h-5" />
-          </Button>
-        </Link>
       )}
     </div>
   );
@@ -86,6 +75,23 @@ vscode: {
   fg: "white",
   icon: <Image src="/assets/icons/vscode.svg" alt="VS Code" width={20} height={20} />,
 },
+  unreal: {
+  title: "Unreal",
+  bg: "black",
+  fg: "white",
+  icon: <Image src="/assets/icons/unreal.svg" alt="Unreal" width={20} height={20} />,
+},
+  davinci: {
+  title: "Davinci",
+  bg: "black",
+  fg: "white",
+  icon: <Image src="/assets/icons/davinci.svg" alt="Davinci" width={20} height={20} />,
+},
+  blender: {
+  title: "Blender",
+  bg: "black",
+  fg: "white",
+  icon: <Image src="/assets/icons/blender.svg" alt="Blender" width={20} height={20} />,
 };
 export type Project = {
   id: string;
@@ -114,7 +120,6 @@ const projects: Project[] = [
       backend: [],
     },
     live: "https://www.codingducks.xyz/",
-    github: "https://github.com/Naresh-Khatri/Coding-Ducks",
     get content() {
       return (
         <div>
@@ -203,13 +208,16 @@ const projects: Project[] = [
   },
   {
     id: "couponluxury",
-    category: "Coupon site",
-    title: "Coupon Luxury",
+    category: "Générique & Intro",
+    title: "Éléments 3D film",
     src: "/assets/projects-screenshots/couponluxury/landing.png",
     screenshots: ["1.png", "2.png", "3.png", "4.png", "5.png"],
     live: "https://www.couponluxury.com/",
     skills: {
       frontend: [
+        PROJECT_SKILLS.unreal,
+        PROJECT_SKILLS.Davinci,
+        PROJECT_SKILLS.blender,
       ],
       backend: [
       ],
