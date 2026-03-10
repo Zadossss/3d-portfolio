@@ -140,8 +140,8 @@ const projects: Project[] = [
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/codingducks/problems.png`,
-              `${BASE_PATH}/codingducks/problem.png`,
+              `${BASE_PATH}/codingducks/2.jpg`,
+              `${BASE_PATH}/codingducks/3.jpg`,
             ]}
           />
           <TypographyH3 className="my-4 mt-8">Progression</TypographyH3>
@@ -151,9 +151,9 @@ const projects: Project[] = [
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/codingducks/ducklets.png`,
-              `${BASE_PATH}/codingducks/ducklet1.png`,
-              `${BASE_PATH}/codingducks/ducklet2.png`,
+              `${BASE_PATH}/codingducks/6.jpg`,
+              `${BASE_PATH}/codingducks/4.jpg`,
+              `${BASE_PATH}/codingducks/5.jpg`,
             ]}
           />
           <TypographyH3 className="my-4 mt-8">Ennemis & difficulté </TypographyH3>
@@ -162,31 +162,19 @@ const projects: Project[] = [
             Les vagues deviennent progressivement plus dangereuses avec des ennemis plus rapides et plus nombreux.
             Le joueur doit optimiser ses compétences pour survivre le plus longtemps possible.
           </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/css-battles.png`,
-              `${BASE_PATH}/codingducks/css-battle.png`,
-              `${BASE_PATH}/codingducks/css-battle2.png`,
-            ]}
-          />
+
           <TypographyH3 className="my-4 mt-8">Technologie utilisée </TypographyH3>
           <p className="font-mono mb-2">
             Le jeu a été développé avec Unity.
             L’IA m’a aidé pour certaines parties du code et du prototypage.
-            Le projet inclut :
-            
-            • système de vagues
-            • système de progression
-            • gestion des ennemis
+            Le projet inclut un système de vagues, système de progression et une gestion des ennemis.
           </p>
-          <SlideShow images={[`${BASE_PATH}/codingducks/contests.png`]} 
+          <SlideShow images={[`${BASE_PATH}/codingducks/7.jpg`]} 
         />
           <TypographyH3 className="my-4 mt-8">Mon rôle </TypographyH3>
           <p className="font-mono mb-2">
-            • conception du gameplay
-            • programmation du système de vagues
-            • intégration des compétences
-            • équilibrage de la difficulté
+            J'ai pensé à la conception du gameplay, ainsi qu'à la programmation du système de vagues avec l'intégration des compétences
+             et l'équilibrage de la difficulté.
           </p>
           <SlideShow images={[`${BASE_PATH}/codingducks/playground.png`]} 
         />
@@ -195,12 +183,6 @@ const projects: Project[] = [
           <p className="font-mono mb-2">
             Ce projet m’a permis de travailler sur la conception d’un gameplay progressif et sur l’équilibrage d’un système de progression dans un jeu mobile.
           </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/users.png`,
-              `${BASE_PATH}/codingducks/user.png`,
-            ]}
-          />
         </div>
       );
     },
