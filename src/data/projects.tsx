@@ -384,11 +384,10 @@ const projects: Project[] = [
   {
     id: "portfolio",
     category: "Portfolio",
-    title: "My Portfolio",
+    title: "Mon Portfolio",
     src: "/assets/projects-screenshots/portfolio/landing.png",
     screenshots: ["1.png"],
     live: "http://nareshkhatri.vercel.app",
-    github:"https://github.com/Naresh-Khatri/Portfolio",
     skills: {
       frontend: [
       ],
