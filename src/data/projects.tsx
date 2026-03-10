@@ -119,19 +119,20 @@ const projects: Project[] = [
       return (
         <div>
           <TypographyP className="font-mono text-2xl text-center">
-            Coding ducks = LeetCode + CodePen + CSS Battles
+            Chick'em – survival mobile game
           </TypographyP>
           <TypographyP className="font-mono ">
-            Coding Ducks is your coding dojo — where you level up your skills,
-            battle in real-time code duels, and earn badges like a true code
-            warrior. Track your progress, flex your brain, and climb the
-            leaderboard. Ready to quack the code?
+          Chick'em est un jeu mobile que j’ai développé en autonomie avec l’aide de l’IA.
+          
+          Le joueur incarne un poulet qui doit survivre à des vagues de fermiers toujours plus nombreuses et difficiles. 
+          À chaque montée de niveau, le joueur choisit de nouvelles compétences qui permettent au personnage d’évoluer et de s’adapter à la difficulté croissante.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Problems </TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Gameplay </TypographyH3>
           <p className="font-mono mb-2">
-            Solve coding problems similar to LeetCode, enhancing your
-            problem-solving skills across various languages.
+            Le joueur doit survivre le plus longtemps possible face à des vagues d’ennemis.
+            Chaque vague devient plus difficile et demande une adaptation stratégique.
+            Le système de progression permet de débloquer différentes compétences pour améliorer les capacités du personnage.
           </p>
           <SlideShow
             images={[
@@ -139,10 +140,10 @@ const projects: Project[] = [
               `${BASE_PATH}/codingducks/problem.png`,
             ]}
           />
-          <TypographyH3 className="my-4 mt-8">Ducklets</TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Progression</TypographyH3>
           <p className="font-mono mb-2">
-            Collaborate in real-time with others in a multiplayer coding
-            environment, just like CodePen but with a social twist.
+            À chaque montée de niveau, le joueur peut choisir une compétence qui modifie son style de jeu.
+            Cela permet d’adapter la stratégie en fonction des ennemis rencontrés.
           </p>
           <SlideShow
             images={[
@@ -151,11 +152,11 @@ const projects: Project[] = [
               `${BASE_PATH}/codingducks/ducklet2.png`,
             ]}
           />
-          <TypographyH3 className="my-4 mt-8">UI Battles </TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Ennemis & difficulté </TypographyH3>
 
           <p className="font-mono mb-2">
-            Challenge yourself to create UI components with HTML/CSS/JS, and get
-            instant feedback with an automated similarity scoring.
+            Les vagues deviennent progressivement plus dangereuses avec des ennemis plus rapides et plus nombreux.
+            Le joueur doit optimiser ses compétences pour survivre le plus longtemps possible.
           </p>
           <SlideShow
             images={[
@@ -164,23 +165,31 @@ const projects: Project[] = [
               `${BASE_PATH}/codingducks/css-battle2.png`,
             ]}
           />
-          <TypographyH3 className="my-4 mt-8">Contests </TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Technologie utilisée </TypographyH3>
           <p className="font-mono mb-2">
-            Organize or participate in coding competitions. Successfully used to
-            host three contests during college.
+            Le jeu a été développé avec Unity.
+            L’IA m’a aidé pour certaines parties du code et du prototypage.
+            Le projet inclut :
+            
+            • système de vagues
+            • système de progression
+            • gestion des ennemis
           </p>
-          <SlideShow images={[`${BASE_PATH}/codingducks/contests.png`]} />
-          <TypographyH3 className="my-4 mt-8">Playground </TypographyH3>
+          <SlideShow images={[`${BASE_PATH}/codingducks/contests.png`]} 
+        />
+          <TypographyH3 className="my-4 mt-8">Mon rôle </TypographyH3>
           <p className="font-mono mb-2">
-            Test and execute your code instantly in my versatile online code
-            runner.
+            • conception du gameplay
+            • programmation du système de vagues
+            • intégration des compétences
+            • équilibrage de la difficulté
           </p>
-          <SlideShow images={[`${BASE_PATH}/codingducks/playground.png`]} />
-          <TypographyH3 className="my-4 mt-8">Users</TypographyH3>
+          <SlideShow images={[`${BASE_PATH}/codingducks/playground.png`]} 
+        />
+          <TypographyH3 className="my-4 mt-8">Résultat</TypographyH3>
 
           <p className="font-mono mb-2">
-            Track your progress, earn badges, and climb the rankings with
-            detailed user profiles and activity tracking.
+            Ce projet m’a permis de travailler sur la conception d’un gameplay progressif et sur l’équilibrage d’un système de progression dans un jeu mobile.
           </p>
           <SlideShow
             images={[
