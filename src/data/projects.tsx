@@ -247,7 +247,7 @@ const projects: Project[] = [
     title: "Ouroboros",
     src: "/assets/projects-screenshots/couponluxury/ouroboros.jpg",
     screenshots: ["1.png", "2.png", "3.png", "4.png", "5.png"],
-    live: "https://www.couponluxury.com/",
+    live: "https://youtu.be/nBU-vbM1iBE",
     skills: {
       frontend: [
         PROJECT_SKILLS.unreal,
@@ -256,7 +256,6 @@ const projects: Project[] = [
       backend: [
       ],
     },
-    live: "https://youtu.be/nBU-vbM1iBE",
     get content() {
       return (
         <div>
