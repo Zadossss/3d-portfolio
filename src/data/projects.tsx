@@ -176,8 +176,7 @@ const projects: Project[] = [
             J'ai pensé à la conception du gameplay, ainsi qu'à la programmation du système de vagues avec l'intégration des compétences
              et l'équilibrage de la difficulté.
           </p>
-          <SlideShow images={[`${BASE_PATH}/codingducks/playground.png`]} 
-        />
+          
           <TypographyH3 className="my-4 mt-8">Résultat</TypographyH3>
 
           <p className="font-mono mb-2">
