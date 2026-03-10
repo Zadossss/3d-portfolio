@@ -268,8 +268,7 @@ const projects: Project[] = [
             L’objectif de ce projet était de créer une ouverture visuelle forte pour un film en utilisant un pipeline de production 3D combinant Unreal Engine et DaVinci Resolve 
             afin d’obtenir un rendu cinématographique réaliste.
           </p>
-          <SlideShow images={[`${BASE_PATH}/couponluxury/landing.png`]} 
-        />
+
           <TypographyH3 className="my-4 ">Générique du film</TypographyH3>
           <p className="font-mono mb-2">
             Le générique a été conçu avec Unreal Engine afin de profiter du rendu temps réel et des possibilités de mise en scène offertes par le moteur. 
@@ -277,8 +276,8 @@ const projects: Project[] = [
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/couponluxury/ecran1`,
-              `${BASE_PATH}/couponluxury/ecran2`,
+              `${BASE_PATH}/couponluxury/ecran.jpg`,
+              `${BASE_PATH}/couponluxury/ecran2.jpg`,
             ]}
           />
           <TypographyH3 className="my-4 mt-8">Introduction du film</TypographyH3>
