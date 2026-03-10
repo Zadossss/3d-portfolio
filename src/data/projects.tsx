@@ -237,8 +237,8 @@ export type Project = {
 const projects: Project[] = [
   {
     id: "codingducks",
-    category: "Coding platform",
-    title: "Coding Ducks",
+    category: "Jeux vidéo Mobile",
+    title: "Chick'em",
     src: "/assets/projects-screenshots/codingducks/landing.png",
     screenshots: ["landing.png"],
     skills: {
