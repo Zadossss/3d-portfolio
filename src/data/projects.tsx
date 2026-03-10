@@ -81,7 +81,7 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: (
       <Image
-        src="/assets/icons/vscode.svg"
+        src="/assets/icons/visual-studio-code.svg"
         alt="VS Code"
         width={20}
         height={20}
