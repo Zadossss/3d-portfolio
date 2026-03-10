@@ -92,6 +92,7 @@ vscode: {
   bg: "black",
   fg: "white",
   icon: <Image src="/assets/icons/blender.svg" alt="Blender" width={20} height={20} />,
+    },
 };
 export type Project = {
   id: string;
