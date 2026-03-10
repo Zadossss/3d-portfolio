@@ -147,7 +147,7 @@ const projects: Project[] = [
     category: "Jeux vidéo Mobile",
     title: "Chick'em",
     src: "/assets/projects-screenshots/codingducks/8.jpg",
-    screenshots: ["landing.png"],
+    screenshots: ["8.jpg"],
     skills: {
       frontend: [
         PROJECT_SKILLS.unity,
@@ -244,7 +244,7 @@ const projects: Project[] = [
   {
     id: "couponluxury",
     category: "Générique & Intro",
-    title: "Éléments 3D film",
+    title: "Ouroboros",
     src: "/assets/projects-screenshots/couponluxury/landing.png",
     screenshots: ["1.png", "2.png", "3.png", "4.png", "5.png"],
     live: "https://www.couponluxury.com/",
@@ -252,7 +252,6 @@ const projects: Project[] = [
       frontend: [
         PROJECT_SKILLS.unreal,
         PROJECT_SKILLS.davinci,
-        PROJECT_SKILLS.blender,
       ],
       backend: [
       ],
@@ -261,22 +260,20 @@ const projects: Project[] = [
       return (
         <div>
           <TypographyP className="font-mono ">
-            CouponLuxury is your go-to destination for snagging the best deals
-            without lifting a finger. Whether you&apos;re hunting for the latest
-            discounts or trying to save a buck at your favorite stores,
-            CouponLuxury&apos;s got you covered.
+            Réalisation d’un générique et d’une introduction de film en 3D temps réel avec Unreal Engine.
+            Le projet combine animation, mise en scène cinématographique et color grading pour créer une ouverture immersive.
           </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
+
           <p className="font-mono mb-2 mt-4">
-            As soon as you land, boom! You&apos;re greeted with the freshest
-            coupons and top-tier deals that&apos;ll make your wallet happy.
+            L’objectif de ce projet était de créer une ouverture visuelle forte pour un film en utilisant un pipeline de production 3D combinant Unreal Engine et DaVinci Resolve 
+            afin d’obtenir un rendu cinématographique réaliste.
           </p>
-          <SlideShow images={[`${BASE_PATH}/couponluxury/landing.png`]} />
-          <TypographyH3 className="my-4 ">Stores</TypographyH3>
+          <SlideShow images={[`${BASE_PATH}/couponluxury/landing.png`]} 
+        />
+          <TypographyH3 className="my-4 ">Générique du film</TypographyH3>
           <p className="font-mono mb-2">
-            Dive into a comprehensive list of stores, each packed with exclusive
-            deals and discounts. It&apos;s like having a VIP pass to every sale
-            in town.
+            Le générique a été conçu avec Unreal Engine afin de profiter du rendu temps réel et des possibilités de mise en scène offertes par le moteur. 
+            Le travail s’est concentré sur l’animation des éléments visuels, les transitions entre les plans et l’intégration des textes du générique dans l’environnement 3D avec Davinci.
           </p>
           <SlideShow
             images={[
@@ -284,19 +281,19 @@ const projects: Project[] = [
               `${BASE_PATH}/couponluxury/store.png`,
             ]}
           />
-          <TypographyH3 className="my-4 mt-8">Categories</TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Introduction du film</TypographyH3>
 
           <p className="font-mono mb-2">
-            Whatever you&apos;re into—fashion, tech, food—you&apos;ll find it
-            neatly organized here. No more endless scrolling; just pick a
-            category and get the best offers instantly.
+            L’introduction du film a également été réalisée avec Unreal Engine.
+            Cette séquence sert à poser l’atmosphère du film et à introduire visuellement l’univers dans lequel se déroule l’histoire.
           </p>
-          <SlideShow images={[`${BASE_PATH}/couponluxury/categories.png`]} />
-          <TypographyH3 className="my-4 mt-8">Custom CMS </TypographyH3>
+          <SlideShow images={[`${BASE_PATH}/couponluxury/categories.png`]} 
+        />
+          <TypographyH3 className="my-4 mt-8">Color Grading </TypographyH3>
           <p className="font-mono mb-2">
-            Powered by Vue.js, this bad boy allows us to keep the content
-            dynamic and up-to-date. From flash sales to limited-time offers, my
-            CMS ensures everything&apos;s live and relevant.
+            Le color grading a été réalisé avec DaVinci Resolve afin d’harmoniser les couleurs et renforcer l’ambiance cinématographique des séquences. 
+            Le travail s’est concentré sur l’équilibrage des contrastes, l’ajustement des teintes et la gestion de la lumière pour donner une identité visuelle 
+            cohérente à l’ensemble du générique et de l’introduction du film.
           </p>
           <SlideShow
             images={[
@@ -304,14 +301,10 @@ const projects: Project[] = [
               `${BASE_PATH}/couponluxury/cms-2.png`,
             ]}
           />
-          <p className="font-mono mb-2 mt-5">
-            Plus, I&apos;ve sprinkled in some extra magic like personalized
-            deal recommendations, user-friendly search features, and a sleek,
-            responsive design that works like a charm on any device.
-          </p>
+          <TypographyH3 className="my-4 mt-8">Résultat</TypographyH3>
           <p className="font-mono mb-2">
-            CouponLuxury isn&apos;t just a website; it&apos;s your personal deal-hunting
-            assistant, ensuring you never miss out on a bargain!
+            Ce projet m’a permis d’explorer la création d’ambiances cinématographiques en 3D temps réel et de travailler un pipeline mêlant Unreal Engine, 
+            et DaVinci Resolve pour produire une introduction et un générique de film cohérents et immersifs.
           </p>
           {/* <TypographyP className="my-4 mt-8">
           <strong>Misc:</strong>
