@@ -19,7 +19,7 @@ const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
         href={live}
       >
         <Button variant="default" size="sm">
-          Jouer au jeu
+          Découvrir
           <ArrowUpRight className="ml-3 w-5 h-5" />
         </Button>
       </Link>
