@@ -2,32 +2,11 @@ import AceTernityLogo from "@/components/logos/aceternity";
 import SlideShow from "@/components/slide-show";
 import { Button } from "@/components/ui/button";
 import { TypographyH3, TypographyP } from "@/components/ui/typography";
-import { ArrowUpRight, ExternalLink, Link2, MoveUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
-import { RiNextjsFill, RiNodejsFill, RiReactjsFill } from "react-icons/ri";
-import {
-  SiChakraui,
-  SiDocker,
-  SiExpress,
-  SiFirebase,
-  SiJavascript,
-  SiMongodb,
-  SiPostgresql,
-  SiPrisma,
-  SiPython,
-  SiReactquery,
-  SiSanity,
-  SiShadcnui,
-  SiSocketdotio,
-  SiSupabase,
-  SiTailwindcss,
-  SiThreedotjs,
-  SiTypescript,
-  SiVuedotjs,
-} from "react-icons/si";
-import { TbBrandFramerMotion } from "react-icons/tb";
+
 const BASE_PATH = "/assets/projects-screenshots";
 
 const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
@@ -35,15 +14,29 @@ const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
     <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
       <Link
         className="font-mono underline flex gap-2"
-        rel="noopener"
-        target="_new"
+        rel="noopener noreferrer"
+        target="_blank"
         href={live}
       >
-        <Button variant={"default"} size={"sm"}>
+        <Button variant="default" size="sm">
           Jouer au jeu
           <ArrowUpRight className="ml-3 w-5 h-5" />
         </Button>
       </Link>
+
+      {repo && (
+        <Link
+          className="font-mono underline flex gap-2"
+          rel="noopener noreferrer"
+          target="_blank"
+          href={repo}
+        >
+          <Button variant="default" size="sm">
+            Github
+            <ArrowUpRight className="ml-3 w-5 h-5" />
+          </Button>
+        </Link>
+      )}
     </div>
   );
 };
@@ -54,44 +47,88 @@ export type Skill = {
   fg: string;
   icon: ReactNode;
 };
+
 const PROJECT_SKILLS = {
-unity: {
-  title: "Unity",
-  bg: "black",
-  fg: "white",
-  icon: <Image src="/assets/icons/unity.svg" alt="Unity" width={20} height={20} />,
-},
-chatgpt: {
-  title: "ChatGPT",
-  bg: "black",
-  fg: "white",
-  icon: <Image src="/assets/icons/chatgpt.svg" alt="ChatGPT" width={20} height={20} />,
-},
-vscode: {
-  title: "VS Code",
-  bg: "black",
-  fg: "white",
-  icon: <Image src="/assets/icons/vscode.svg" alt="VS Code" width={20} height={20} />,
-},
+  unity: {
+    title: "Unity",
+    bg: "black",
+    fg: "white",
+    icon: (
+      <Image
+        src="/assets/icons/unity.svg"
+        alt="Unity"
+        width={20}
+        height={20}
+      />
+    ),
+  },
+  chatgpt: {
+    title: "ChatGPT",
+    bg: "black",
+    fg: "white",
+    icon: (
+      <Image
+        src="/assets/icons/chatgpt.svg"
+        alt="ChatGPT"
+        width={20}
+        height={20}
+      />
+    ),
+  },
+  vscode: {
+    title: "VS Code",
+    bg: "black",
+    fg: "white",
+    icon: (
+      <Image
+        src="/assets/icons/vscode.svg"
+        alt="VS Code"
+        width={20}
+        height={20}
+      />
+    ),
+  },
   unreal: {
-  title: "Unreal",
-  bg: "black",
-  fg: "white",
-  icon: <Image src="/assets/icons/unreal.svg" alt="Unreal" width={20} height={20} />,
-},
+    title: "Unreal",
+    bg: "black",
+    fg: "white",
+    icon: (
+      <Image
+        src="/assets/icons/unreal.svg"
+        alt="Unreal"
+        width={20}
+        height={20}
+      />
+    ),
+  },
   davinci: {
-  title: "Davinci",
-  bg: "black",
-  fg: "white",
-  icon: <Image src="/assets/icons/davinci.svg" alt="Davinci" width={20} height={20} />,
-},
+    title: "Davinci",
+    bg: "black",
+    fg: "white",
+    icon: (
+      <Image
+        src="/assets/icons/davinci.svg"
+        alt="Davinci"
+        width={20}
+        height={20}
+      />
+    ),
+  },
   blender: {
-  title: "Blender",
-  bg: "black",
-  fg: "white",
-  icon: <Image src="/assets/icons/blender.svg" alt="Blender" width={20} height={20} />,
-    },
+    title: "Blender",
+    bg: "black",
+    fg: "white",
+    icon: (
+      <Image
+        src="/assets/icons/blender.svg"
+        alt="Blender"
+        width={20}
+        height={20}
+      />
+    ),
+  },
 };
+
 export type Project = {
   id: string;
   category: string;
@@ -99,10 +136,11 @@ export type Project = {
   src: string;
   screenshots: string[];
   skills: { frontend: Skill[]; backend: Skill[] };
-  content: React.ReactNode | any;
+  content: React.ReactNode;
   github?: string;
   live: string;
 };
+
 const projects: Project[] = [
   {
     id: "codingducks",
@@ -123,20 +161,28 @@ const projects: Project[] = [
       return (
         <div>
           <TypographyP className="font-mono text-2xl text-center">
-            Chick'em – survival mobile game
+            Chick&apos;em – survival mobile game
           </TypographyP>
-          <TypographyP className="font-mono ">
-          Chick'em est un jeu mobile que j’ai développé en autonomie avec l’aide de l’IA.
-          
-          Le joueur incarne un poulet qui doit survivre à des vagues de fermiers toujours plus nombreuses et difficiles. 
-          À chaque montée de niveau, le joueur choisit de nouvelles compétences qui permettent au personnage d’évoluer et de s’adapter à la difficulté croissante.
+
+          <TypographyP className="font-mono">
+            Chick&apos;em est un jeu mobile que j’ai développé en autonomie avec
+            l’aide de l’IA.
+            <br />
+            <br />
+            Le joueur incarne un poulet qui doit survivre à des vagues de
+            fermiers toujours plus nombreuses et difficiles. À chaque montée de
+            niveau, le joueur choisit de nouvelles compétences qui permettent au
+            personnage d’évoluer et de s’adapter à la difficulté croissante.
           </TypographyP>
+
           <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Gameplay </TypographyH3>
+
+          <TypographyH3 className="my-4 mt-8">Gameplay</TypographyH3>
           <p className="font-mono mb-2">
-            Le joueur doit survivre le plus longtemps possible face à des vagues d’ennemis.
-            Chaque vague devient plus difficile et demande une adaptation stratégique.
-            Le système de progression permet de débloquer différentes compétences pour améliorer les capacités du personnage.
+            Le joueur doit survivre le plus longtemps possible face à des vagues
+            d’ennemis. Chaque vague devient plus difficile et demande une
+            adaptation stratégique. Le système de progression permet de débloquer
+            différentes compétences pour améliorer les capacités du personnage.
           </p>
           <SlideShow
             images={[
@@ -144,10 +190,12 @@ const projects: Project[] = [
               `${BASE_PATH}/codingducks/3.jpg`,
             ]}
           />
+
           <TypographyH3 className="my-4 mt-8">Progression</TypographyH3>
           <p className="font-mono mb-2">
-            À chaque montée de niveau, le joueur peut choisir une compétence qui modifie son style de jeu.
-            Cela permet d’adapter la stratégie en fonction des ennemis rencontrés.
+            À chaque montée de niveau, le joueur peut choisir une compétence qui
+            modifie son style de jeu. Cela permet d’adapter la stratégie en
+            fonction des ennemis rencontrés.
           </p>
           <SlideShow
             images={[
@@ -156,31 +204,38 @@ const projects: Project[] = [
               `${BASE_PATH}/codingducks/5.jpg`,
             ]}
           />
-          <TypographyH3 className="my-4 mt-8">Ennemis & difficulté </TypographyH3>
 
+          <TypographyH3 className="my-4 mt-8">
+            Ennemis & difficulté
+          </TypographyH3>
           <p className="font-mono mb-2">
-            Les vagues deviennent progressivement plus dangereuses avec des ennemis plus rapides et plus nombreux.
-            Le joueur doit optimiser ses compétences pour survivre le plus longtemps possible.
+            Les vagues deviennent progressivement plus dangereuses avec des
+            ennemis plus rapides et plus nombreux. Le joueur doit optimiser ses
+            compétences pour survivre le plus longtemps possible.
           </p>
 
-          <TypographyH3 className="my-4 mt-8">Technologie utilisée </TypographyH3>
+          <TypographyH3 className="my-4 mt-8">
+            Technologie utilisée
+          </TypographyH3>
           <p className="font-mono mb-2">
-            Le jeu a été développé avec Unity.
-            L’IA m’a aidé pour certaines parties du code et du prototypage.
-            Le projet inclut un système de vagues, système de progression et une gestion des ennemis.
+            Le jeu a été développé avec Unity. L’IA m’a aidé pour certaines
+            parties du code et du prototypage. Le projet inclut un système de
+            vagues, un système de progression et une gestion des ennemis.
           </p>
-          <SlideShow images={[`${BASE_PATH}/codingducks/7.jpg`]} 
-        />
-          <TypographyH3 className="my-4 mt-8">Mon rôle </TypographyH3>
+          <SlideShow images={[`${BASE_PATH}/codingducks/7.jpg`]} />
+
+          <TypographyH3 className="my-4 mt-8">Mon rôle</TypographyH3>
           <p className="font-mono mb-2">
-            J'ai pensé à la conception du gameplay, ainsi qu'à la programmation du système de vagues avec l'intégration des compétences
-             et l'équilibrage de la difficulté.
+            J’ai pensé la conception du gameplay, ainsi que la programmation du
+            système de vagues, l’intégration des compétences et l’équilibrage de
+            la difficulté.
           </p>
-          
+
           <TypographyH3 className="my-4 mt-8">Résultat</TypographyH3>
-
           <p className="font-mono mb-2">
-            Ce projet m’a permis de travailler sur la conception d’un gameplay progressif et sur l’équilibrage d’un système de progression dans un jeu mobile.
+            Ce projet m’a permis de travailler sur la conception d’un gameplay
+            progressif et sur l’équilibrage d’un système de progression dans un
+            jeu mobile.
           </p>
         </div>
       );
