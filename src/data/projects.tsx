@@ -412,7 +412,7 @@ const projects: Project[] = [
   },
   {
     id: "portfolio",
-    category: "Portfolio",
+    category: "Portfolio VisionPro",
     title: "Mon Portfolio",
     src: "/assets/projects-screenshots/portfolio/couverture.jpg",
     screenshots: ["1.png"],
