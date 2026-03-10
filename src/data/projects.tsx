@@ -113,7 +113,6 @@ const projects: Project[] = [
       ],
       backend: [],
     },
-    },
     live: "https://www.codingducks.xyz/",
     github: "https://github.com/Naresh-Khatri/Coding-Ducks",
     get content() {
