@@ -282,14 +282,18 @@ const projects: Project[] = [
             ]}
           />
           <TypographyH3 className="my-4 mt-8">Introduction du film</TypographyH3>
-
+          
           <p className="font-mono mb-2">
             L’introduction du film a également été réalisée avec Unreal Engine.
             Cette séquence sert à poser l’atmosphère du film et à introduire visuellement l’univers dans lequel se déroule l’histoire.
           </p>
-          <SlideShow images={[`${BASE_PATH}/couponluxury/usine1;jpg`]} 
-          <SlideShow images={[`${BASE_PATH}/couponluxury/light.jpg`]}
-        />
+          
+          <SlideShow
+            images={[
+              `${BASE_PATH}/couponluxury/usine1.jpg`,
+              `${BASE_PATH}/couponluxury/light.jpg`,
+            ]}
+          />
           <TypographyH3 className="my-4 mt-8">Color Grading </TypographyH3>
           <p className="font-mono mb-2">
             Le color grading a été réalisé avec DaVinci Resolve afin d’harmoniser les couleurs et renforcer l’ambiance cinématographique des séquences. 
