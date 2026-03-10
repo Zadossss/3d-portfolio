@@ -414,11 +414,13 @@ const projects: Project[] = [
     id: "portfolio",
     category: "Portfolio",
     title: "Mon Portfolio",
-    src: "/assets/projects-screenshots/portfolio/landing.png",
+    src: "/assets/projects-screenshots/portfolio/couverture.jpg",
     screenshots: ["1.png"],
     live: "https://zadossss.github.io/portfolio-HugoAuphant/",
     skills: {
       frontend: [
+        PROJECT_SKILLS.spline,
+        PROJECT_SKILLS.photoshop,
       ],
       backend: [],
     },
