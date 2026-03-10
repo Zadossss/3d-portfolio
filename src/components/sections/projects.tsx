@@ -30,28 +30,27 @@ const ProjectsSection = () => {
 };
 
 const Modall = ({ project }: { project: Project }) => {
-  const [open, setOpen] = React.useState(false);
-
   return (
     <div className="flex items-center justify-center">
-      <Modal open={open} onOpenChange={setOpen}>
-        <ModalTrigger
-          className="bg-transparent flex justify-center group/modal-btn w-full"
-          onClick={() => setOpen(true)}
-        >
+      <Modal>
+        <ModalTrigger className="bg-transparent flex justify-center group/modal-btn">
           <div
-            className="relative w-[400px] h-auto rounded-lg overflow-hidden"
-            style={{ aspectRatio: "3 / 2" }}
+            className="relative w-[400px] rounded-lg overflow-hidden"
+            style={{ aspectRatio: "3/2" }}
           >
             <Image
-              className="absolute w-full h-full top-0 left-0 object-cover hover:scale-[1.05] transition-all duration-300"
               src={project.src}
               alt={project.title}
               fill
+              className="object-cover hover:scale-[1.05] transition-all duration-300"
             />
-            <div className="absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-black via-black/85 to-transparent pointer-events-none">
+
+            <div className="absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none">
               <div className="flex flex-col h-full items-start justify-end p-6">
-                <div className="text-lg text-left">{project.title}</div>
+                <div className="text-lg text-left text-white">
+                  {project.title}
+                </div>
+
                 <div className="text-xs bg-white text-black rounded-lg w-fit px-2">
                   {project.category}
                 </div>
@@ -67,16 +66,16 @@ const Modall = ({ project }: { project: Project }) => {
             </ModalContent>
           </SmoothScroll>
 
-          <ModalFooter className="gap-4">
+          <ModalFooter className="gap-4 flex justify-center mt-6">
             <button
-              onClick={() => setOpen(false)}
-              className="px-3 py-2 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28"
+              onClick={() => window.location.reload()}
+              className="px-3 py-2 bg-gray-200 text-black border border-gray-300 rounded-md text-sm w-28 hover:bg-gray-300 transition"
             >
               Fermer
             </button>
 
-            <Link href={project.live} target="_blank" rel="noopener noreferrer">
-              <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-3 py-2 rounded-md border border-black w-28">
+            <Link href={project.live} target="_blank">
+              <button className="bg-black text-white text-sm px-3 py-2 rounded-md border border-black w-28 hover:bg-neutral-800 transition">
                 Visiter
               </button>
             </Link>
