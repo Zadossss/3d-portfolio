@@ -94,7 +94,7 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: (
       <Image
-        src="/assets/icons/unreal.svg"
+        src="/assets/icons/unrealengine.svg"
         alt="Unreal Engine"
         width={20}
         height={20}
@@ -256,7 +256,7 @@ const projects: Project[] = [
       backend: [
       ],
     },
-    get content(): JSX.Element {
+    get content() {
       return (
         <div>
           <TypographyP className="font-mono ">
