@@ -95,7 +95,7 @@ const PROJECT_SKILLS = {
     icon: (
       <Image
         src="/assets/icons/unreal.svg"
-        alt="Unreal"
+        alt="Unreal Engine"
         width={20}
         height={20}
       />
