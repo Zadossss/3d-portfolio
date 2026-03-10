@@ -120,7 +120,7 @@ const projects: Project[] = [
       ],
       backend: [],
     },
-    live: "https://www.codingducks.xyz/",
+    live: "https://hugoatfbx.itch.io/chickem",
     get content() {
       return (
         <div>
