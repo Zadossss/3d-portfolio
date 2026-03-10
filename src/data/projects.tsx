@@ -256,6 +256,7 @@ const projects: Project[] = [
       backend: [
       ],
     },
+    live: "https://youtu.be/nBU-vbM1iBE",
     get content() {
       return (
         <div>
@@ -263,7 +264,7 @@ const projects: Project[] = [
             Réalisation d’un générique et d’une introduction de film en 3D temps réel avec Unreal Engine.
             Le projet combine animation, mise en scène cinématographique et color grading pour créer une ouverture immersive.
           </TypographyP>
-
+          <ProjectsLinks live={this.live} repo={this.github} />
           <p className="font-mono mb-2 mt-4">
             L’objectif de ce projet était de créer une ouverture visuelle forte pour un film en utilisant un pipeline de production 3D combinant Unreal Engine et DaVinci Resolve 
             afin d’obtenir un rendu cinématographique réaliste.
@@ -277,8 +278,8 @@ const projects: Project[] = [
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/couponluxury/stores.png`,
-              `${BASE_PATH}/couponluxury/store.png`,
+              `${BASE_PATH}/couponluxury/ecran1`,
+              `${BASE_PATH}/couponluxury/ecran2`,
             ]}
           />
           <TypographyH3 className="my-4 mt-8">Introduction du film</TypographyH3>
