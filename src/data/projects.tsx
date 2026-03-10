@@ -44,8 +44,6 @@ const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
           <ArrowUpRight className="ml-3 w-5 h-5" />
         </Button>
       </Link>
-      {repo && (
-      )}
     </div>
   );
 };
