@@ -425,7 +425,7 @@ const projects: Project[] = [
             Le portfolio regroupe plusieurs types de projets réalisés pendant mes années de BUT MMI. On y retrouve des travaux liés à la photographie, au graphisme, 
             à la modélisation 3D ainsi qu’au développement web afin de représenter la diversité des compétences abordées dans la formation.
           </p>
-          <SlideShow images={[`${BASE_PATH}/portfolio/profil.jpg`,]} />
+          <SlideShow images={[`${BASE_PATH}/portfolio/projet.jpg`,]} />
           <TypographyH3 className="my-4 mt-8">Technologies utilisées</TypographyH3>
 
           <p className="font-mono mb-2">
