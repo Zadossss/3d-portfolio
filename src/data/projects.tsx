@@ -400,43 +400,43 @@ const projects: Project[] = [
       return (
         <div>
           <TypographyP className="font-mono ">
-            Welcome to my digital playground, where creativity meets code in the
-            dopest way possible.
+            Ce projet correspond à mon ancien portfolio réalisé durant mes années de BUT Métiers du Multimédia et de l’Internet. 
+            L’objectif était de créer un espace personnel permettant de présenter mes différents travaux réalisés pendant la formation dans plusieurs domaines 
+            du multimédia comme la photographie, le graphisme, la modélisation 3D et le développement web.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
           <TypographyH3 className="my-4 mt-8">
-            Beautiful 3D Objects{" "}
+            Conception du portfolio{" "}
           </TypographyH3>
           <p className="font-mono mb-2">
-            Did you see that 3D keyboard modal? Yeah! I made that. That
-            interactive keyboard is being rendered in 3D on a webpage 🤯, and
-            pressing each keycap reveals a skill in a goofy way. It&apos;s like
-            typing, but make it art.
+            La conception du portfolio a commencé par la création d’une interface immersive permettant de regrouper différents types de projets dans un seul environnement visuel. 
+            L’interface a été pensée pour être claire et intuitive avec une organisation par catégories afin de faciliter la navigation entre les différentes réalisations.
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/portfolio/landing.png`,
-              `${BASE_PATH}/portfolio/skills.png`,
+              `${BASE_PATH}/portfolio/accueil.jpg`,
+              `${BASE_PATH}/portfolio/carriere.jpg`,
+              `${BASE_PATH}/portfolio/photo.jpg`,
+              `${BASE_PATH}/portfolio/profil.jpg`,
             ]}
           />
-          <TypographyH3 className="my-4 ">Space Theme</TypographyH3>
+          <TypographyH3 className="my-4 ">Organisation des contenus</TypographyH3>
           <p className="font-mono mb-2">
-            Dark background + floating particles = out-of-this-world cool.
+            Le portfolio regroupe plusieurs types de projets réalisés pendant mes années de BUT MMI. On y retrouve des travaux liés à la photographie, au graphisme, 
+            à la modélisation 3D ainsi qu’au développement web afin de représenter la diversité des compétences abordées dans la formation.
           </p>
-          <SlideShow images={[`${BASE_PATH}/portfolio/navbar.png`]} />
-          <TypographyH3 className="my-4 mt-8">Projects</TypographyH3>
+          <SlideShow images={[`${BASE_PATH}/portfolio/profil.jpg`,]} />
+          <TypographyH3 className="my-4 mt-8">Technologies utilisées</TypographyH3>
 
           <p className="font-mono mb-2">
-            My top personal and freelance projects — no filler, all killer.
+            Le portfolio a été conçu en utilisant Spline pour la création de l’interface interactive et des éléments visuels immersifs. 
+            Photoshop a été utilisé pour la création et la préparation de certains visuels intégrés dans le projet afin d’obtenir une identité graphique cohérente.
           </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/portfolio/projects.png`,
-              `${BASE_PATH}/portfolio/project.png`,
-            ]}
-          />
-          <p className="font-mono mb-2 mt-8 text-center">
-            This site&apos;s not just a portfolio — it&apos;s a whole vibe.
+          <TypographyH3 className="my-4 mt-8">Résultat</TypographyH3>
+
+          <p className="font-mono mb-2">
+            Ce projet m’a permis de regrouper et structurer l’ensemble de mes travaux réalisés pendant mes études tout en expérimentant
+            la création d’un portfolio interactif capable de présenter différents types de productions multimédia dans une seule interface.
           </p>
         </div>
       );
