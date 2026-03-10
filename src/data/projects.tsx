@@ -68,160 +68,24 @@ export type Skill = {
   icon: ReactNode;
 };
 const PROJECT_SKILLS = {
-  next: {
-    title: "Next.js",
-    bg: "black",
-    fg: "white",
-    icon: <RiNextjsFill />,
-  },
-  chakra: {
-    title: "Chakra UI",
-    bg: "black",
-    fg: "white",
-    icon: <SiChakraui />,
-  },
-  node: {
-    title: "Node.js",
-    bg: "black",
-    fg: "white",
-    icon: <RiNodejsFill />,
-  },
-  python: {
-    title: "Python",
-    bg: "black",
-    fg: "white",
-    icon: <SiPython />,
-  },
-  prisma: {
-    title: "prisma",
-    bg: "black",
-    fg: "white",
-    icon: <SiPrisma />,
-  },
-  postgres: {
-    title: "PostgreSQL",
-    bg: "black",
-    fg: "white",
-    icon: <SiPostgresql />,
-  },
-  mongo: {
-    title: "MongoDB",
-    bg: "black",
-    fg: "white",
-    icon: <SiMongodb />,
-  },
-  express: {
-    title: "Express",
-    bg: "black",
-    fg: "white",
-    icon: <SiExpress />,
-  },
-  reactQuery: {
-    title: "React Query",
-    bg: "black",
-    fg: "white",
-    icon: <SiReactquery />,
-  },
-  shadcn: {
-    title: "ShanCN UI",
-    bg: "black",
-    fg: "white",
-    icon: <SiShadcnui />,
-  },
-  aceternity: {
-    title: "Aceternity",
-    bg: "black",
-    fg: "white",
-    icon: <AceTernityLogo />,
-  },
-  tailwind: {
-    title: "Tailwind",
-    bg: "black",
-    fg: "white",
-    icon: <SiTailwindcss />,
-  },
-  docker: {
-    title: "Docker",
-    bg: "black",
-    fg: "white",
-    icon: <SiDocker />,
-  },
-  yjs: {
-    title: "Y.js",
-    bg: "black",
-    fg: "white",
-    icon: (
-      <span>
-        <strong>Y</strong>js
-      </span>
-    ),
-  },
-  firebase: {
-    title: "Firebase",
-    bg: "black",
-    fg: "white",
-    icon: <SiFirebase />,
-  },
-  sockerio: {
-    title: "Socket.io",
-    bg: "black",
-    fg: "white",
-    icon: <SiSocketdotio />,
-  },
-  js: {
-    title: "JavaScript",
-    bg: "black",
-    fg: "white",
-    icon: <SiJavascript />,
-  },
-  ts: {
-    title: "TypeScript",
-    bg: "black",
-    fg: "white",
-    icon: <SiTypescript />,
-  },
-  vue: {
-    title: "Vue.js",
-    bg: "black",
-    fg: "white",
-    icon: <SiVuedotjs />,
-  },
-  react: {
-    title: "React.js",
-    bg: "black",
-    fg: "white",
-    icon: <RiReactjsFill />,
-  },
-  sanity: {
-    title: "Sanity",
-    bg: "black",
-    fg: "white",
-    icon: <SiSanity />,
-  },
-  spline: {
-    title: "Spline",
-    bg: "black",
-    fg: "white",
-    icon: <SiThreedotjs />,
-  },
-  gsap: {
-    title: "GSAP",
-    bg: "black",
-    fg: "white",
-    icon: "",
-  },
-  framerMotion: {
-    title: "Framer Motion",
-    bg: "black",
-    fg: "white",
-    icon: <TbBrandFramerMotion />,
-  },
-  supabase: {
-    title: "Supabase",
-    bg: "black",
-    fg: "white",
-    icon: <SiSupabase />,
-  },
+unity: {
+  title: "Unity",
+  bg: "black",
+  fg: "white",
+  icon: <Image src="/assets/icons/unity.svg" alt="Unity" width={20} height={20} />,
+},
+chatgpt: {
+  title: "ChatGPT",
+  bg: "black",
+  fg: "white",
+  icon: <Image src="/assets/icons/chatgpt.svg" alt="ChatGPT" width={20} height={20} />,
+},
+vscode: {
+  title: "VS Code",
+  bg: "black",
+  fg: "white",
+  icon: <Image src="/assets/icons/vscode.svg" alt="VS Code" width={20} height={20} />,
+},
 };
 export type Project = {
   id: string;
@@ -243,20 +107,12 @@ const projects: Project[] = [
     screenshots: ["landing.png"],
     skills: {
       frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.chakra,
-        PROJECT_SKILLS.reactQuery,
-        PROJECT_SKILLS.firebase,
+        PROJECT_SKILLS.unity,
+        PROJECT_SKILLS.chatgpt,
+        PROJECT_SKILLS.vscode,
       ],
-      backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.prisma,
-        PROJECT_SKILLS.python,
-        PROJECT_SKILLS.postgres,
-        PROJECT_SKILLS.sockerio,
-      ],
+      backend: [],
+    },
     },
     live: "https://www.codingducks.xyz/",
     github: "https://github.com/Naresh-Khatri/Coding-Ducks",
