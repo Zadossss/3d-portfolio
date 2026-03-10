@@ -272,7 +272,7 @@ export const EXPERIENCE: Experience[] = [
   {
     id: 1,
     startDate: "2023",
-    endDate: "Présent",
+    endDate: "2026",
     title: "Étudiant MMI",
     company: "Formation / Projets",
     description: [
@@ -298,10 +298,25 @@ export const EXPERIENCE: Experience[] = [
   },
   {
     id: 2,
+    startDate: "Mars",
+    endDate: "Juillet 2026",
+    title: "Pôle Formation UIMM SUD",
+    company: "Stage Istres, France",
+    description: [
+      "Gestion des réseaux sociaux et analyse des statistiques d’audience afin d’optimiser la visibilité et l’engagement des publications.",
+    ],
+    skills: [
+      SkillNames.AFTER_EFFECTS,
+      SkillNames.PHOTOSHOP,
+      SkillNames.ILLUSTRATOR,
+    ],
+  },
+  {
+    id: 3,
     startDate: "Avril",
     endDate: "Juin 2025",
     title: "APTITUDE X",
-    company: "Stage Canada",
+    company: "Stage Montréal, Canada",
     description: [
       "Création de contenus visuels pour le développement d'un jeux vidéo.",
       "UI/UX design, déploiement sur Testflight.",
@@ -313,6 +328,20 @@ export const EXPERIENCE: Experience[] = [
       SkillNames.UNREAL,
       SkillNames.XCODE,
       SkillNames.SUBSTANCE_PAINTER,
+    ],
+  },
+   {
+    id: 4,
+    startDate: "",
+    endDate: "Juin 2024",
+    title: "Office Municipal des Sports",
+    company: "Stage Salon de Provence, France",
+    description: [
+      "Montage vidéo et création de contenu digital",
+      "Travail en équipe et tournage audiovisuel",
+    ],
+    skills: [
+      SkillNames.PREMIERE_PRO,
     ],
   },
 ];
