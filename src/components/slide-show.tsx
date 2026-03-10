@@ -37,13 +37,22 @@ const SlideShow = ({ images }: { images: string[] }) => {
                 onMouseEnter={() => setHovering(idx)}
                 onMouseLeave={() => setHovering(null)}
               >
-                <div className="relative w-full aspect-video overflow-hidden rounded-lg">
-                  <Image
-                    src={image}
-                    alt="screenshot"
-                    fill
-                    className="object-cover"
-                  />
+                <div className="relative w-full aspect-video overflow-hidden rounded-lg bg-black">
+                  {image.endsWith(".mp4") ? (
+                    <video
+                      src={image}
+                      className="w-full h-full object-cover"
+                      muted
+                      playsInline
+                    />
+                  ) : (
+                    <Image
+                      src={image}
+                      alt="screenshot"
+                      fill
+                      className="object-cover"
+                    />
+                  )}
                 </div>
 
                 <AnimatePresence>
@@ -62,16 +71,26 @@ const SlideShow = ({ images }: { images: string[] }) => {
 
               <DialogContent className="min-w-[90vw] h-[90vh] bg-transparent outline-none border-none p-0 m-0">
                 <DialogHeader className="w-full">
-                  <DialogDescription>{image.split("/").pop()}</DialogDescription>
+                  <DialogDescription>
+                    {image.split("/").pop()}
+                  </DialogDescription>
                 </DialogHeader>
 
-                <div className="relative w-full h-[80vh]">
-                  <Image
-                    src={image}
-                    alt="screenshot"
-                    fill
-                    className="object-contain"
-                  />
+                <div className="relative w-full h-[80vh] bg-black rounded-lg overflow-hidden">
+                  {image.endsWith(".mp4") ? (
+                    <video
+                      src={image}
+                      controls
+                      className="w-full h-full object-contain"
+                    />
+                  ) : (
+                    <Image
+                      src={image}
+                      alt="screenshot"
+                      fill
+                      className="object-contain"
+                    />
+                  )}
                 </div>
               </DialogContent>
             </Dialog>
