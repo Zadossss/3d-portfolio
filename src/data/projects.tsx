@@ -245,7 +245,7 @@ const projects: Project[] = [
     id: "couponluxury",
     category: "Générique & Intro",
     title: "Ouroboros",
-    src: "/assets/projects-screenshots/couponluxury/landing.png",
+    src: "/assets/projects-screenshots/couponluxury/ouroboros.jpg",
     screenshots: ["1.png", "2.png", "3.png", "4.png", "5.png"],
     live: "https://www.couponluxury.com/",
     skills: {
@@ -287,7 +287,8 @@ const projects: Project[] = [
             L’introduction du film a également été réalisée avec Unreal Engine.
             Cette séquence sert à poser l’atmosphère du film et à introduire visuellement l’univers dans lequel se déroule l’histoire.
           </p>
-          <SlideShow images={[`${BASE_PATH}/couponluxury/categories.png`]} 
+          <SlideShow images={[`${BASE_PATH}/couponluxury/usine1;jpg`]} 
+          <SlideShow images={[`${BASE_PATH}/couponluxury/light.jpg`]}
         />
           <TypographyH3 className="my-4 mt-8">Color Grading </TypographyH3>
           <p className="font-mono mb-2">
@@ -297,8 +298,8 @@ const projects: Project[] = [
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/couponluxury/cms-1.png`,
-              `${BASE_PATH}/couponluxury/cms-2.png`,
+              `${BASE_PATH}/couponluxury/sans.jpg`,
+              `${BASE_PATH}/couponluxury/avec.jpg`,
             ]}
           />
           <TypographyH3 className="my-4 mt-8">Résultat</TypographyH3>
