@@ -353,7 +353,7 @@ const projects: Project[] = [
     id: "the-booking-desk",
     category: "Modélisation 3D",
     title: "RedBull",
-    src: "/assets/projects-screenshots/the-booking-desk/couvertureRB",
+    src: "/assets/projects-screenshots/the-booking-desk/couvertureRB.jpg",
     screenshots: ["1.png"],
     live: "https://thebookingdesk.com/",
     skills: {
@@ -396,8 +396,8 @@ const projects: Project[] = [
           <SlideShow
             images={[
               `${BASE_PATH}/the-booking-desk/couvertureRB.jpg`,
-              `${BASE_PATH}/the-booking-desk/RB1`,
-              `${BASE_PATH}/the-booking-desk/RB2`,
+              `${BASE_PATH}/the-booking-desk/RB1.jpg`,
+              `${BASE_PATH}/the-booking-desk/RB2.jpg`,
             ]}
           />
           <TypographyH3 className="my-4 mt-8">Résultat</TypographyH3>
