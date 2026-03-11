@@ -67,19 +67,21 @@ const Modall = ({ project }: { project: Project }) => {
           </SmoothScroll>
 
           <ModalFooter className="gap-4 flex justify-center mt-6">
-            <button
-              onClick={() => window.location.reload()}
-              className="px-3 py-2 bg-gray-200 text-black border border-gray-300 rounded-md text-sm w-28 hover:bg-gray-300 transition"
-            >
-              Fermer
-            </button>
-
-            <Link href={project.live} target="_blank">
-              <button className="bg-black text-white text-sm px-3 py-2 rounded-md border border-black w-28 hover:bg-neutral-800 transition">
-                Visiter
+              <button
+                onClick={() => window.location.reload()}
+                className="px-3 py-2 bg-gray-200 text-black border border-gray-300 rounded-md text-sm w-28 hover:bg-gray-300 transition"
+              >
+                Fermer
               </button>
-            </Link>
-          </ModalFooter>
+            
+              {project.live && (
+                <Link href={project.live} target="_blank">
+                  <button className="bg-black text-white text-sm px-3 py-2 rounded-md border border-black w-28 hover:bg-neutral-800 transition">
+                    Visiter
+                  </button>
+                </Link>
+              )}
+            </ModalFooter>
         </ModalBody>
       </Modal>
     </div>
