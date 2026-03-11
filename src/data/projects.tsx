@@ -172,7 +172,7 @@ const projects: Project[] = [
     id: "codingducks",
     category: "Jeux vidéo Mobile",
     title: "Chick'em",
-    src: "/assets/projects-screenshots/codingducks/8.jpg",
+    src: "/assets/projects-screenshots/codingducks/Chick'em.jpg",
     screenshots: ["8.jpg"],
     skills: {
       frontend: [
