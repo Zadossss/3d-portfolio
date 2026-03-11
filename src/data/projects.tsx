@@ -351,35 +351,34 @@ const projects: Project[] = [
   },
   {
     id: "the-booking-desk",
-    category: "Travel",
-    title: "The Booking Desk",
+    category: "Modélisation 3D",
+    title: "RedBull",
     src: "/assets/projects-screenshots/the-booking-desk/landing.png",
     screenshots: ["1.png"],
     live: "https://thebookingdesk.com/",
     skills: {
-    frontend: [],
+    frontend: [
+      PROJECT_SKILLS.blender,
+    ],
     backend: [],
     },
     get content() {
       return (
         <div>
           <TypographyP className="font-mono ">
-            The Booking Desk is your ultimate travel consultation hub, designed
-            to turn your wanderlust dreams into reality. With a focus on smooth
-            and visually captivating animations, navigating the site feels like
-            a breeze—it&apos;s almost as if the destinations are calling you.
+            Ce projet consiste en la modélisation 3D d’une canette Red Bull réalisée sur Blender. 
+            L’objectif était de reproduire fidèlement un objet du quotidien en travaillant la précision des formes, des proportions et des détails afin d’obtenir un rendu réaliste.
           </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <p className="font-mono mb-2 mt-8">
-            A sleek, modern interface greets you, featuring the latest travel
-            tips, deals, and must-visit spots around the globe.
+          <TypographyH3 className="my-4 mt-8">Modélisation 3D</TypographyH3>
+          <p className="font-mono mb-2">
+            La modélisation a été réalisée entièrement dans Blender en partant de formes simples qui ont été progressivement affinées pour reproduire la géométrie de la canette. 
+            Le travail s’est concentré sur la précision des proportions et sur la construction d’une géométrie propre permettant d’obtenir une surface lisse et réaliste.
           </p>
           <SlideShow images={[`${BASE_PATH}/the-booking-desk/landing.png`]} />
-          <TypographyH3 className="my-4 mt-8">Blogs</TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Structure du modèle et wireframe</TypographyH3>
           <p className="font-mono mb-2">
-            Dive into the curated articles written by travel experts. Whether
-            you&apos;re looking for hidden gems or travel hacks, our blog section has
-            you covered.
+            Une attention particulière a été portée à la structure du modèle afin d’obtenir un wireframe propre et optimisé. La topologie a été organisée de manière à garder une géométrie claire et cohérente, 
+            ce qui permet d’éviter les artefacts visuels et d’assurer un rendu plus réaliste lors de l’application de l’éclairage et du rendu final.
           </p>
           <SlideShow
             images={[
@@ -387,12 +386,11 @@ const projects: Project[] = [
               `${BASE_PATH}/the-booking-desk/blog.png`,
             ]}
           />
-          <TypographyH3 className="my-4 mt-8">Sanity CMS</TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Lumière et rendu</TypographyH3>
 
           <p className="font-mono mb-2">
-            Keeping everything fresh and up-to-date, I&apos;ve integrated Sanity CMS
-            to manage all the content with ease, ensuring you always get the
-            latest and greatest information.
+            Le rendu final s’appuie sur un travail de lumière permettant de mettre en valeur les volumes et les reflets de la canette. L’éclairage a été pensé pour renforcer l’aspect réaliste de l’objet, 
+            souligner les formes principales et donner plus de profondeur au rendu final.
           </p>
           <SlideShow
             images={[
@@ -400,11 +398,10 @@ const projects: Project[] = [
               `${BASE_PATH}/the-booking-desk/cms-2.png`,
             ]}
           />
+          <TypographyH3 className="my-4 mt-8">Résultat</TypographyH3>
           <p className="font-mono mb-2 my-8">
-            With a stunning 100% score on Lighthouse, The Booking Desk isn&apos;t
-            just beautiful—it&apos;s built to perform. Whether you&apos;re planning your
-            next adventure or just daydreaming, our site delivers a top-notch
-            experience that&apos;s both informative and enjoyable.
+            Ce projet m’a permis de développer mes compétences en modélisation 3D sur Blender et de mieux comprendre l’importance de la topologie,
+            du wireframe et du travail de la lumière pour obtenir un rendu visuellement crédible.
           </p>
         </div>
       );
