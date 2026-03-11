@@ -39,25 +39,6 @@ export default function Footer() {
           <span>Images:</span> Unsplash
         </motion.li>
       </ul>
-      <ul>
-        <motion.li
-          custom={[0.3, 0]}
-          variants={translate}
-          initial="initial"
-          animate="enter"
-          exit="exit"
-        >
-          Blog
-        </motion.li>
-        <motion.li
-          custom={[0.3, 0]}
-          variants={translate}
-          initial="initial"
-          animate="enter"
-          exit="exit"
-        >
-        </motion.li>
-      </ul>
     </div>
   );
 }
