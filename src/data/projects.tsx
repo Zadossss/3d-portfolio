@@ -355,7 +355,7 @@ const projects: Project[] = [
     title: "RedBull",
     src: "/assets/projects-screenshots/the-booking-desk/couvertureRB.jpg",
     screenshots: ["1.png"],
-    live: "https://thebookingdesk.com/",
+    live: "",
     skills: {
     frontend: [
       PROJECT_SKILLS.blender,
