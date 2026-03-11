@@ -353,7 +353,7 @@ const projects: Project[] = [
     id: "the-booking-desk",
     category: "Modélisation 3D",
     title: "RedBull",
-    src: "/assets/projects-screenshots/the-booking-desk/landing.png",
+    src: "/assets/projects-screenshots/the-booking-desk/couvertureRB",
     screenshots: ["1.png"],
     live: "https://thebookingdesk.com/",
     skills: {
@@ -374,7 +374,8 @@ const projects: Project[] = [
             La modélisation a été réalisée entièrement dans Blender en partant de formes simples qui ont été progressivement affinées pour reproduire la géométrie de la canette. 
             Le travail s’est concentré sur la précision des proportions et sur la construction d’une géométrie propre permettant d’obtenir une surface lisse et réaliste.
           </p>
-          <SlideShow images={[`${BASE_PATH}/the-booking-desk/landing.png`]} />
+          <SlideShow images={[`${BASE_PATH}/the-booking-desk/SOLID.jpg`
+                             `${BASE_PATH}/the-booking-desk/solid1.jpg`]} />
           <TypographyH3 className="my-4 mt-8">Structure du modèle et wireframe</TypographyH3>
           <p className="font-mono mb-2">
             Une attention particulière a été portée à la structure du modèle afin d’obtenir un wireframe propre et optimisé. La topologie a été organisée de manière à garder une géométrie claire et cohérente, 
@@ -382,8 +383,8 @@ const projects: Project[] = [
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/the-booking-desk/blogs.png`,
-              `${BASE_PATH}/the-booking-desk/blog.png`,
+              `${BASE_PATH}/the-booking-desk/wireframe.jpg`,
+              `${BASE_PATH}/the-booking-desk/wireframe1.jpg`,
             ]}
           />
           <TypographyH3 className="my-4 mt-8">Lumière et rendu</TypographyH3>
@@ -394,8 +395,9 @@ const projects: Project[] = [
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/the-booking-desk/cms-1.png`,
-              `${BASE_PATH}/the-booking-desk/cms-2.png`,
+              `${BASE_PATH}/the-booking-desk/couvertureRB.jpg`,
+              `${BASE_PATH}/the-booking-desk/RB1`,
+              `${BASE_PATH}/the-booking-desk/RB2`,
             ]}
           />
           <TypographyH3 className="my-4 mt-8">Résultat</TypographyH3>
