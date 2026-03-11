@@ -353,7 +353,7 @@ const projects: Project[] = [
     id: "the-booking-desk",
     category: "Modélisation 3D",
     title: "RedBull",
-    src: "/assets/projects-screenshots/the-booking-desk/couvertureRB.jpg",
+    src: "/assets/projects-screenshots/the-booking-desk/RB1.jpg",
     screenshots: ["1.png"],
     live: "",
     skills: {
