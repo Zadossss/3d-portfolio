@@ -59,14 +59,14 @@ const Modall = ({ project }: { project: Project }) => {
           </div>
         </ModalTrigger>
 
-        <ModalBody className="md:max-w-5xl md:max-h-[85vh] overflow-auto">
-          <SmoothScroll isInsideModal={true}>
+       <ModalBody className="w-[95vw] max-w-5xl max-h-[85vh] overflow-hidden flex flex-col">
+          <div className="flex-1 overflow-y-auto touch-pan-y">
             <ModalContent>
               <ProjectContents project={project} />
             </ModalContent>
-          </SmoothScroll>
-
-          <ModalFooter className="gap-4 flex justify-center mt-6">
+          </div>
+        
+          <ModalFooter className="gap-4 flex justify-center mt-6 shrink-0">
               <button
                 onClick={() => window.location.reload()}
                 className="px-3 py-2 bg-gray-200 text-black border border-gray-300 rounded-md text-sm w-28 hover:bg-gray-300 transition"
