@@ -107,10 +107,11 @@ export const ModalBody = ({
         >
           <Overlay />
 
-          <motion.div
+         <motion.div
             ref={modalRef}
+            data-lenis-prevent
             className={cn(
-              "relative z-[60] w-[95vw] max-w-5xl max-h-[90vh] overflow-y-auto overscroll-contain touch-pan-y bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl",
+              "modall relative z-[60] w-[95vw] max-w-5xl max-h-[90vh] overflow-y-auto overscroll-contain touch-pan-y bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl",
               className
             )}
             initial={{
