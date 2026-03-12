@@ -8,10 +8,10 @@ import {
   ModalContent,
   ModalFooter,
   ModalTrigger,
+  useModal,
 } from "../ui/animated-modal";
 import { FloatingDock } from "../ui/floating-dock";
 import Link from "next/link";
-import SmoothScroll from "../smooth-scroll";
 import projects, { Project } from "@/data/projects";
 import { SectionHeader } from "./section-header";
 import SectionWrapper from "../ui/section-wrapper";
@@ -59,32 +59,38 @@ const Modall = ({ project }: { project: Project }) => {
           </div>
         </ModalTrigger>
 
-       <ModalBody className="w-[95vw] max-w-5xl max-h-[85vh] overflow-hidden flex flex-col">
-          <div className="flex-1 overflow-y-auto touch-pan-y">
-            <ModalContent>
-              <ProjectContents project={project} />
-            </ModalContent>
-          </div>
-        
-          <ModalFooter className="gap-4 flex justify-center mt-6 shrink-0">
-              <button
-                onClick={() => window.location.reload()}
-                className="px-3 py-2 bg-gray-200 text-black border border-gray-300 rounded-md text-sm w-28 hover:bg-gray-300 transition"
-              >
-                Fermer
-              </button>
-            
-              {project.live && (
-                <Link href={project.live} target="_blank">
-                  <button className="bg-black text-white text-sm px-3 py-2 rounded-md border border-black w-28 hover:bg-neutral-800 transition">
-                    Visiter
-                  </button>
-                </Link>
-              )}
-            </ModalFooter>
+        <ModalBody>
+          <ModalContent>
+            <ProjectContents project={project} />
+          </ModalContent>
+
+          <ProjectModalFooter project={project} />
         </ModalBody>
       </Modal>
     </div>
+  );
+};
+
+const ProjectModalFooter = ({ project }: { project: Project }) => {
+  const { setOpen } = useModal();
+
+  return (
+    <ModalFooter className="gap-4 flex justify-center mt-6">
+      <button
+        onClick={() => setOpen(false)}
+        className="px-3 py-2 bg-gray-200 text-black border border-gray-300 rounded-md text-sm w-28 hover:bg-gray-300 transition"
+      >
+        Fermer
+      </button>
+
+      {project.live && (
+        <Link href={project.live} target="_blank">
+          <button className="bg-black text-white text-sm px-3 py-2 rounded-md border border-black w-28 hover:bg-neutral-800 transition">
+            Visiter
+          </button>
+        </Link>
+      )}
+    </ModalFooter>
   );
 };
 
