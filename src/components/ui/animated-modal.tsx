@@ -9,7 +9,6 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { ScrollArea } from "./scroll-area";
 
 interface ModalContextType {
   open: boolean;
@@ -48,6 +47,7 @@ export const ModalTrigger = ({
   className?: string;
 }) => {
   const { setOpen } = useModal();
+
   return (
     <button
       className={cn(
@@ -68,50 +68,49 @@ export const ModalBody = ({
   children: ReactNode;
   className?: string;
 }) => {
-  const { open } = useModal();
+  const { open, setOpen } = useModal();
+  const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") setOpen(false);
-      });
-    }
-  }, []);
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [setOpen]);
+
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
     }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [open]);
 
-  const modalRef = useRef(null);
-  const { setOpen } = useModal();
   useOutsideClick(modalRef, () => setOpen(false));
 
   return (
     <AnimatePresence>
       {open && (
         <motion.div
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-            backdropFilter: "blur(10px)",
-          }}
-          exit={{
-            opacity: 0,
-            backdropFilter: "blur(0px)",
-          }}
-          className="modall fixed [perspective:800px] [transform-style:preserve-3d] inset-0 h-full w-full  flex items-center justify-center z-50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, backdropFilter: "blur(10px)" }}
+          exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+          className="fixed inset-0 z-50 flex items-center justify-center"
         >
           <Overlay />
 
           <motion.div
             ref={modalRef}
             className={cn(
-              "min-h-[50%] max-h-[90%] md:max-w-[40%] bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden",
+              "relative z-[60] flex w-[95vw] max-w-5xl max-h-[90dvh] flex-col overflow-hidden bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl",
               className
             )}
             initial={{
@@ -138,9 +137,9 @@ export const ModalBody = ({
             }}
           >
             <CloseIcon />
-            <ScrollArea className="h-[80dvh] w-full rounded-md border">
+            <div className="w-full flex-1 overflow-y-auto overscroll-contain touch-pan-y">
               {children}
-            </ScrollArea>
+            </div>
           </motion.div>
         </motion.div>
       )}
@@ -172,7 +171,7 @@ export const ModalFooter = ({
   return (
     <div
       className={cn(
-        "flex justify-end p-4 bg-gray-100 dark:bg-neutral-900",
+        "flex justify-end p-4 bg-gray-100 dark:bg-neutral-900 shrink-0",
         className
       )}
     >
@@ -183,27 +182,21 @@ export const ModalFooter = ({
 
 const Overlay = ({ className }: { className?: string }) => {
   const { setOpen } = useModal();
+
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-        backdropFilter: "blur(10px)",
-      }}
-      exit={{
-        opacity: 0,
-        backdropFilter: "blur(0px)",
-      }}
-      className={`modal-overlay fixed inset-0 h-full w-full bg-black bg-opacity-50 z-50 ${className}`}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, backdropFilter: "blur(10px)" }}
+      exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+      className={cn("fixed inset-0 z-50 bg-black/50", className)}
       onClick={() => setOpen(false)}
-    ></motion.div>
+    />
   );
 };
 
 const CloseIcon = () => {
   const { setOpen } = useModal();
+
   return (
     <button
       onClick={() => setOpen(false)}
@@ -229,23 +222,13 @@ const CloseIcon = () => {
   );
 };
 
-// Hook to detect clicks outside of a component.
-// Add it in a separate file, I've added here for simplicity
 export const useOutsideClick = (
   ref: React.RefObject<HTMLDivElement>,
   callback: Function
 ) => {
   useEffect(() => {
-    const listener = (
-      event: any
-      //  React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>
-    ) => {
-      // DO NOTHING if the element being clicked is the target element or their children
-      if (
-        !ref.current ||
-        ref.current.contains(event.target) ||
-        !event.target.classList.contains("no-click-outside")
-      ) {
+    const listener = (event: MouseEvent | TouchEvent) => {
+      if (!ref.current || ref.current.contains(event.target as Node)) {
         return;
       }
       callback(event);
