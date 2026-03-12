@@ -82,7 +82,7 @@ const HeroSection = () => {
               </div>
               <div className="mt-8 flex flex-col gap-3 w-fit">
               <Link
-                href="/assets/CV.pdf"
+                href="/assets/CV-HugoAuphant.pdf"
                 download
                 target="_blank"
                 className="flex-1"
