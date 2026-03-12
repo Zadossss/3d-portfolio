@@ -1,6 +1,5 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { useLenis } from "@/lib/lenis";
 import { AnimatePresence, motion } from "framer-motion";
 import React, {
   ReactNode,
@@ -51,12 +50,12 @@ export const ModalTrigger = ({
 
   return (
     <button
+      type="button"
       className={cn(
         "px-4 py-2 rounded-md text-black dark:text-white text-center relative overflow-hidden",
         className
       )}
       onClick={() => setOpen(true)}
-      type="button"
     >
       {children}
     </button>
@@ -72,7 +71,6 @@ export const ModalBody = ({
 }) => {
   const { open, setOpen } = useModal();
   const modalRef = useRef<HTMLDivElement>(null);
-  const lenis = useLenis();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -88,17 +86,17 @@ export const ModalBody = ({
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
-      lenis?.stop();
+      document.documentElement.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto";
-      lenis?.start();
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     }
 
     return () => {
-      document.body.style.overflow = "auto";
-      lenis?.start();
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     };
-  }, [open, lenis]);
+  }, [open]);
 
   useOutsideClick(modalRef, () => setOpen(false));
 
@@ -107,44 +105,49 @@ export const ModalBody = ({
       {open && (
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, backdropFilter: "blur(10px)" }}
-          exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
-          className="fixed inset-0 z-50 flex items-center justify-center p-2 md:p-4"
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-start justify-center p-2 md:p-4"
         >
           <Overlay />
 
           <motion.div
             ref={modalRef}
-            data-lenis-prevent
             className={cn(
-              "modall relative z-[60] w-[95vw] max-w-5xl max-h-[90vh] overflow-y-auto overscroll-contain touch-pan-y bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl",
+              "relative z-[60] w-[95vw] max-w-5xl mt-4 md:mt-8 bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl shadow-xl overflow-hidden",
               className
             )}
             initial={{
               opacity: 0,
-              scale: 0.5,
-              rotateX: 40,
-              y: 40,
+              scale: 0.96,
+              y: 20,
             }}
             animate={{
               opacity: 1,
               scale: 1,
-              rotateX: 0,
               y: 0,
             }}
             exit={{
               opacity: 0,
-              scale: 0.8,
-              rotateX: 10,
+              scale: 0.98,
+              y: 10,
             }}
             transition={{
               type: "spring",
               stiffness: 260,
-              damping: 15,
+              damping: 22,
             }}
           >
             <CloseIcon />
-            {children}
+
+            <div
+              className="max-h-[88dvh] overflow-y-auto"
+              style={{
+                WebkitOverflowScrolling: "touch",
+              }}
+            >
+              {children}
+            </div>
           </motion.div>
         </motion.div>
       )}
@@ -191,8 +194,8 @@ const Overlay = ({ className }: { className?: string }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1, backdropFilter: "blur(10px)" }}
-      exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       className={cn("fixed inset-0 z-50 bg-black/50", className)}
       onClick={() => setOpen(false)}
     />
@@ -204,9 +207,9 @@ const CloseIcon = () => {
 
   return (
     <button
+      type="button"
       onClick={() => setOpen(false)}
       className="absolute top-4 right-4 group z-[9999]"
-      type="button"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
