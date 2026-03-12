@@ -8,11 +8,13 @@ interface LenisProps {
 }
 
 function SmoothScroll({ children }: LenisProps) {
+
+  // détecte si c'est un téléphone
   const isMobile =
     typeof window !== "undefined" &&
     /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-  // Sur mobile on n'utilise pas Lenis
+  // sur mobile on désactive lenis
   if (isMobile) {
     return <>{children}</>;
   }
@@ -22,7 +24,6 @@ function SmoothScroll({ children }: LenisProps) {
       root
       options={{
         duration: 1.2,
-        smoothWheel: true,
       }}
     >
       {children}
