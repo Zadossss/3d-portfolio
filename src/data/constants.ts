@@ -172,7 +172,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "Sub Painter",
     shortDescription: "Texturing PBR et matériaux avancés.",
     color: "#111111",
-    icon: "/assets/icons/substance-painter.svg",
+    icon: "/assets/icons/substance.svg",
   },
 
   [SkillNames.DAVINCI]: {
