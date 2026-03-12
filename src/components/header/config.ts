@@ -4,22 +4,22 @@ const links: Link[] = [
   {
     title: 'Accueil',
     href: '/',
-    thumbnail: '/assets/nav-link-previews/landing.png'
+    thumbnail: '/assets/nav-link-previews/accueil.jpg'
   },
   {
     title: 'Expérience',
     href: '/#experience',
-    thumbnail: '/assets/nav-link-previews/landing.png'
+    thumbnail: '/assets/nav-link-previews/experience.jpg'
   },
   {
     title: 'Skills',
     href: '/#skills',
-    thumbnail: '/assets/nav-link-previews/skills.png'
+    thumbnail: '/assets/nav-link-previews/skills.jpg'
   },
   {
     title: 'Projets',
     href: '/#projects',
-    thumbnail: '/assets/nav-link-previews/projects.png'
+    thumbnail: '/assets/nav-link-previews/projets'
   },
   // {
   //   title: 'Skills',
@@ -32,14 +32,9 @@ const links: Link[] = [
   //   thumbnail: '/assets/nav-link-previews/testimonials.png'
   // },
   {
-    title: 'Blogs',
-    href: '/blogs',
-    thumbnail: '/assets/nav-link-previews/blog.png',
-  },
-  {
     title: 'Contact',
     href: '/#contact',
-    thumbnail: '/assets/nav-link-previews/contact.png'
+    thumbnail: '/assets/nav-link-previews/contact.jpg'
   }
 ];
 
