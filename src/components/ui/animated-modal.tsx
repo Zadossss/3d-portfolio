@@ -103,14 +103,14 @@ export const ModalBody = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, backdropFilter: "blur(10px)" }}
           exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
-          className="fixed inset-0 z-50 flex items-center justify-center"
+          className="fixed inset-0 z-50 flex items-center justify-center p-2 md:p-4"
         >
           <Overlay />
 
           <motion.div
             ref={modalRef}
             className={cn(
-              "relative z-[60] flex w-[95vw] max-w-5xl max-h-[90dvh] flex-col overflow-hidden bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl",
+              "relative z-[60] w-[95vw] max-w-5xl max-h-[90vh] overflow-y-auto overscroll-contain touch-pan-y bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl",
               className
             )}
             initial={{
@@ -137,9 +137,7 @@ export const ModalBody = ({
             }}
           >
             <CloseIcon />
-            <div className="w-full flex-1 overflow-y-auto overscroll-contain touch-pan-y">
-              {children}
-            </div>
+            {children}
           </motion.div>
         </motion.div>
       )}
@@ -155,7 +153,7 @@ export const ModalContent = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex flex-col flex-1 p-3 md:p-10", className)}>
+    <div className={cn("flex flex-col p-3 md:p-10", className)}>
       {children}
     </div>
   );
@@ -171,7 +169,7 @@ export const ModalFooter = ({
   return (
     <div
       className={cn(
-        "flex justify-end p-4 bg-gray-100 dark:bg-neutral-900 shrink-0",
+        "flex justify-end p-4 bg-gray-100 dark:bg-neutral-900",
         className
       )}
     >
